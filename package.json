@@ -1,0 +1,26 @@
+{
+  "name": "trnt-bee-portfolio",
+  "version": "1.0.0",
+  "description": "Premium glassmorphic portfolio and community portal for TRNT BEE & BEE SOCIETY.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 3000",
+    "dev": "npx http-server -p 3000 -c-1"
+  },
+  "keywords": [
+    "portfolio",
+    "glassmorphism",
+    "responsive",
+    "low-lag",
+    "student-startup",
+    "minimalist"
+  ],
+  "author": "TRNT BEE Founders",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "dependencies": {
+    "animejs": "^4.4.1"
+  }
+}

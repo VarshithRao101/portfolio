@@ -1,0 +1,85 @@
+.fa-solid,
+.fa-brands {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1em;
+    line-height: 1;
+    font-style: normal;
+    vertical-align: middle;
+}
+
+.fa-solid::before,
+.fa-brands::before {
+    content: var(--icon, "");
+    display: block;
+    font-family: var(--icon-font, "Segoe UI Symbol", "Segoe UI Emoji", sans-serif);
+    font-size: var(--icon-size, 0.95em);
+    font-weight: var(--icon-weight, 700);
+    letter-spacing: var(--icon-spacing, 0);
+    text-transform: uppercase;
+}
+
+.fa-brands::before {
+    font-family: var(--font-mono, "Courier New", monospace);
+    font-size: 0.62em;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+
+.fa-solid.fa-address-book { --icon: "▤"; }
+.fa-solid.fa-arrow-right { --icon: "→"; }
+.fa-solid.fa-arrow-up-right-from-square { --icon: "↗"; }
+.fa-solid.fa-bell { --icon: "◉"; }
+.fa-solid.fa-book-open { --icon: "▥"; }
+.fa-solid.fa-brain { --icon: "AI"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.72em; }
+.fa-solid.fa-bug-slash { --icon: "⊘"; }
+.fa-solid.fa-circle-check { --icon: "✓"; }
+.fa-solid.fa-circle-info { --icon: "i"; }
+.fa-solid.fa-clock { --icon: "◷"; }
+.fa-solid.fa-code { --icon: "</>"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.7em; --icon-spacing: -0.06em; }
+.fa-solid.fa-code-branch { --icon: "⑂"; }
+.fa-solid.fa-crown { --icon: "♛"; }
+.fa-solid.fa-cube { --icon: "◫"; }
+.fa-solid.fa-cubes { --icon: "▦"; }
+.fa-solid.fa-envelope { --icon: "✉"; }
+.fa-solid.fa-eye { --icon: "◉"; }
+.fa-solid.fa-eye-slash { --icon: "⊘"; }
+.fa-solid.fa-file-pdf { --icon: "PDF"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.62em; }
+.fa-solid.fa-file-pen { --icon: "✎"; }
+.fa-solid.fa-film { --icon: "▣"; }
+.fa-solid.fa-fist-raised { --icon: "✊"; }
+.fa-solid.fa-flask { --icon: "⚗"; }
+.fa-solid.fa-floppy-disk { --icon: "↓"; }
+.fa-solid.fa-gamepad { --icon: "GP"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.62em; }
+.fa-solid.fa-gauge-high { --icon: "↑"; }
+.fa-solid.fa-gear { --icon: "⚙"; }
+.fa-solid.fa-graduation-cap { --icon: "ED"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.62em; }
+.fa-solid.fa-hexagon-nodes { --icon: "⬢"; }
+.fa-solid.fa-hourglass-half { --icon: "⌛"; }
+.fa-solid.fa-key { --icon: "🔑"; }
+.fa-solid.fa-lightbulb { --icon: "💡"; }
+.fa-solid.fa-link { --icon: "⛓"; }
+.fa-solid.fa-lock { --icon: "🔒"; }
+.fa-solid.fa-map { --icon: "⌖"; }
+.fa-solid.fa-mountain-sun { --icon: "⛰"; }
+.fa-solid.fa-network-wired { --icon: "AI"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.62em; }
+.fa-solid.fa-pen { --icon: "✎"; }
+.fa-solid.fa-play { --icon: "▶"; }
+.fa-solid.fa-plus { --icon: "+"; }
+.fa-solid.fa-right-from-bracket { --icon: "⇥"; }
+.fa-solid.fa-rocket { --icon: "🚀"; }
+.fa-solid.fa-shield-halved { --icon: "⛨"; }
+.fa-solid.fa-trash { --icon: "🗑"; }
+.fa-solid.fa-triangle-exclamation { --icon: "⚠"; }
+.fa-solid.fa-unlock-keyhole { --icon: "🔓"; }
+.fa-solid.fa-user-tie { --icon: "ID"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.62em; }
+.fa-solid.fa-utensils { --icon: "🍴"; }
+.fa-solid.fa-whatsapp { --icon: "WA"; --icon-font: var(--font-mono, "Courier New", monospace); }
+.fa-solid.fa-xmark { --icon: "×"; }
+
+.fa-brands.fa-discord { --icon: "DS"; }
+.fa-brands.fa-github { --icon: "GH"; }
+.fa-brands.fa-instagram { --icon: "IG"; }
+.fa-brands.fa-whatsapp { --icon: "WA"; }
+.fa-brands.fa-youtube { --icon: "YT"; }
