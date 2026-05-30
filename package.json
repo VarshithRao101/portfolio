@@ -5,7 +5,9 @@
   "main": "index.html",
   "scripts": {
     "start": "npx http-server -p 3000",
-    "dev": "npx http-server -p 3000 -c-1"
+    "dev": "npx http-server -p 3000 -c-1",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "keywords": [
     "portfolio",
@@ -18,7 +20,8 @@
   "author": "TRNT BEE Founders",
   "license": "MIT",
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "wrangler": "^3.0.0"
   },
   "dependencies": {
     "animejs": "^4.4.1"

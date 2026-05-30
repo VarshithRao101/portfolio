@@ -27,59 +27,106 @@
     letter-spacing: -0.05em;
 }
 
-.fa-solid.fa-address-book { --icon: "▤"; }
-.fa-solid.fa-arrow-right { --icon: "→"; }
-.fa-solid.fa-arrow-up-right-from-square { --icon: "↗"; }
-.fa-solid.fa-bell { --icon: "◉"; }
-.fa-solid.fa-book-open { --icon: "▥"; }
-.fa-solid.fa-brain { --icon: "AI"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.72em; }
-.fa-solid.fa-bug-slash { --icon: "⊘"; }
-.fa-solid.fa-circle-check { --icon: "✓"; }
-.fa-solid.fa-circle-info { --icon: "i"; }
-.fa-solid.fa-clock { --icon: "◷"; }
-.fa-solid.fa-code { --icon: "</>"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.7em; --icon-spacing: -0.06em; }
-.fa-solid.fa-code-branch { --icon: "⑂"; }
-.fa-solid.fa-crown { --icon: "♛"; }
-.fa-solid.fa-cube { --icon: "◫"; }
-.fa-solid.fa-cubes { --icon: "▦"; }
-.fa-solid.fa-envelope { --icon: "✉"; }
-.fa-solid.fa-eye { --icon: "◉"; }
-.fa-solid.fa-eye-slash { --icon: "⊘"; }
-.fa-solid.fa-file-pdf { --icon: "PDF"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.62em; }
-.fa-solid.fa-file-pen { --icon: "✎"; }
-.fa-solid.fa-film { --icon: "▣"; }
-.fa-solid.fa-fist-raised { --icon: "✊"; }
-.fa-solid.fa-flask { --icon: "⚗"; }
-.fa-solid.fa-floppy-disk { --icon: "↓"; }
-.fa-solid.fa-gamepad { --icon: "GP"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.62em; }
-.fa-solid.fa-gauge-high { --icon: "↑"; }
-.fa-solid.fa-gear { --icon: "⚙"; }
-.fa-solid.fa-graduation-cap { --icon: "ED"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.62em; }
-.fa-solid.fa-hexagon-nodes { --icon: "⬢"; }
-.fa-solid.fa-hourglass-half { --icon: "⌛"; }
-.fa-solid.fa-key { --icon: "🔑"; }
-.fa-solid.fa-lightbulb { --icon: "💡"; }
-.fa-solid.fa-link { --icon: "⛓"; }
-.fa-solid.fa-lock { --icon: "🔒"; }
-.fa-solid.fa-map { --icon: "⌖"; }
-.fa-solid.fa-mountain-sun { --icon: "⛰"; }
-.fa-solid.fa-network-wired { --icon: "AI"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.62em; }
-.fa-solid.fa-pen { --icon: "✎"; }
-.fa-solid.fa-play { --icon: "▶"; }
-.fa-solid.fa-plus { --icon: "+"; }
-.fa-solid.fa-right-from-bracket { --icon: "⇥"; }
-.fa-solid.fa-rocket { --icon: "🚀"; }
-.fa-solid.fa-shield-halved { --icon: "⛨"; }
-.fa-solid.fa-trash { --icon: "🗑"; }
-.fa-solid.fa-triangle-exclamation { --icon: "⚠"; }
-.fa-solid.fa-unlock-keyhole { --icon: "🔓"; }
-.fa-solid.fa-user-tie { --icon: "ID"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.62em; }
-.fa-solid.fa-utensils { --icon: "🍴"; }
-.fa-solid.fa-whatsapp { --icon: "WA"; --icon-font: var(--font-mono, "Courier New", monospace); }
-.fa-solid.fa-xmark { --icon: "×"; }
+.fa-brands.fa-github::before,
+.fa-brands.fa-instagram::before,
+.fa-brands.fa-youtube::before,
+.fa-brands.fa-discord::before,
+.fa-brands.fa-whatsapp::before,
+.fa-solid.fa-envelope::before,
+.fa-solid.fa-hexagon-nodes::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    display: block;
+    background-color: currentColor;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+}
 
-.fa-brands.fa-discord { --icon: "DS"; }
-.fa-brands.fa-github { --icon: "GH"; }
-.fa-brands.fa-instagram { --icon: "IG"; }
-.fa-brands.fa-whatsapp { --icon: "WA"; }
-.fa-brands.fa-youtube { --icon: "YT"; }
+.fa-solid.fa-address-book { --icon: "\25A4"; }
+.fa-solid.fa-arrow-right { --icon: "\2192"; }
+.fa-solid.fa-arrow-up-right-from-square { --icon: "\2197"; }
+.fa-solid.fa-bell { --icon: "\25C9"; }
+.fa-solid.fa-book-open { --icon: "\25A5"; }
+.fa-solid.fa-brain { --icon: "AI"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.72em; }
+.fa-solid.fa-bug-slash { --icon: "\2298"; }
+.fa-solid.fa-circle-check { --icon: "\2713"; }
+.fa-solid.fa-circle-info { --icon: "i"; }
+.fa-solid.fa-clock { --icon: "\25F7"; }
+.fa-solid.fa-code { --icon: "</>"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.7em; --icon-spacing: -0.06em; }
+.fa-solid.fa-code-branch { --icon: "\2442"; }
+.fa-solid.fa-crown { --icon: "\265B"; }
+.fa-solid.fa-cube { --icon: "\25EB"; }
+.fa-solid.fa-cubes { --icon: "\25A6"; }
+.fa-solid.fa-eye { --icon: "\25C9"; }
+.fa-solid.fa-eye-slash { --icon: "\2298"; }
+.fa-solid.fa-file-pdf { --icon: "PDF"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.62em; }
+.fa-solid.fa-file-pen { --icon: "\270E"; }
+.fa-solid.fa-film { --icon: "\25A3"; }
+.fa-solid.fa-fist-raised { --icon: "\270A"; }
+.fa-solid.fa-flask { --icon: "\2697"; }
+.fa-solid.fa-floppy-disk { --icon: "\2193"; }
+.fa-solid.fa-gamepad { --icon: "GP"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.62em; }
+.fa-solid.fa-gauge-high { --icon: "\2191"; }
+.fa-solid.fa-gear { --icon: "\2699"; }
+.fa-solid.fa-graduation-cap { --icon: "ED"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.62em; }
+.fa-solid.fa-hourglass-half { --icon: "\231B"; }
+.fa-solid.fa-key { --icon: "KEY"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.56em; }
+.fa-solid.fa-lightbulb { --icon: "IDEA"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.5em; }
+.fa-solid.fa-link { --icon: "\26D3"; }
+.fa-solid.fa-lock { --icon: "LOCK"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.5em; }
+.fa-solid.fa-map { --icon: "\2316"; }
+.fa-solid.fa-mountain-sun { --icon: "\26F0"; }
+.fa-solid.fa-network-wired { --icon: "AI"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.62em; }
+.fa-solid.fa-pen { --icon: "\270E"; }
+.fa-solid.fa-play { --icon: "\25B6"; }
+.fa-solid.fa-plus { --icon: "+"; }
+.fa-solid.fa-right-from-bracket { --icon: "\21E5"; }
+.fa-solid.fa-rocket { --icon: "UP"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.62em; }
+.fa-solid.fa-shield-halved { --icon: "\26E8"; }
+.fa-solid.fa-trash { --icon: "DEL"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.56em; }
+.fa-solid.fa-triangle-exclamation { --icon: "\26A0"; }
+.fa-solid.fa-unlock-keyhole { --icon: "OPEN"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.46em; }
+.fa-solid.fa-user-tie { --icon: "ID"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.62em; }
+.fa-solid.fa-utensils { --icon: "FOOD"; --icon-font: var(--font-mono, "Courier New", monospace); --icon-size: 0.46em; }
+.fa-solid.fa-whatsapp { --icon: "WA"; --icon-font: var(--font-mono, "Courier New", monospace); }
+.fa-solid.fa-xmark { --icon: "\00D7"; }
+
+.fa-solid.fa-envelope::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.18-.75L12 11.05 18.82 6H5.18ZM19 7.24l-6.4 4.74a1 1 0 0 1-1.2 0L5 7.24v10.01c0 .41.34.75.75.75h12.5c.41 0 .75-.34.75-.75V7.24Z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.18-.75L12 11.05 18.82 6H5.18ZM19 7.24l-6.4 4.74a1 1 0 0 1-1.2 0L5 7.24v10.01c0 .41.34.75.75.75h12.5c.41 0 .75-.34.75-.75V7.24Z'/%3E%3C/svg%3E");
+}
+
+.fa-solid.fa-hexagon-nodes::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 2.25 19.58 6.6v8.8L12 19.75 4.42 15.4V6.6L12 2.25Zm0 2.3L6.42 7.75v6.5L12 17.45l5.58-3.2v-6.5L12 4.55Zm0 2.2a2 2 0 0 1 1.86 1.27l1.78.22a1 1 0 0 1 .86 1.38l-.73 1.64.73 1.64a1 1 0 0 1-.86 1.38l-1.78.22A2 2 0 1 1 10.14 15l-1.78-.22a1 1 0 0 1-.86-1.38l.73-1.64-.73-1.64a1 1 0 0 1 .86-1.38L10.14 8A2 2 0 0 1 12 6.75Zm0 1.5a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1Zm-1.96 1.23-.78.1.32.72a1 1 0 0 1 0 .82l-.32.72.78.1a1 1 0 0 1 .76.56l.3.68.3-.68a1 1 0 0 1 .76-.56l.78-.1-.32-.72a1 1 0 0 1 0-.82l.32-.72-.78-.1a1 1 0 0 1-.76-.56l-.3-.68-.3.68a1 1 0 0 1-.76.56Z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 2.25 19.58 6.6v8.8L12 19.75 4.42 15.4V6.6L12 2.25Zm0 2.3L6.42 7.75v6.5L12 17.45l5.58-3.2v-6.5L12 4.55Zm0 2.2a2 2 0 0 1 1.86 1.27l1.78.22a1 1 0 0 1 .86 1.38l-.73 1.64.73 1.64a1 1 0 0 1-.86 1.38l-1.78.22A2 2 0 1 1 10.14 15l-1.78-.22a1 1 0 0 1-.86-1.38l.73-1.64-.73-1.64a1 1 0 0 1 .86-1.38L10.14 8A2 2 0 0 1 12 6.75Zm0 1.5a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1Zm-1.96 1.23-.78.1.32.72a1 1 0 0 1 0 .82l-.32.72.78.1a1 1 0 0 1 .76.56l.3.68.3-.68a1 1 0 0 1 .76-.56l.78-.1-.32-.72a1 1 0 0 1 0-.82l.32-.72-.78-.1a1 1 0 0 1-.76-.56l-.3-.68-.3.68a1 1 0 0 1-.76.56Z'/%3E%3C/svg%3E");
+}
+
+.fa-brands.fa-discord::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M19.54 5.34A16.7 16.7 0 0 0 15.4 4l-.2.4a14.97 14.97 0 0 1 3.6 1.26c-2.15-.97-4.45-1.44-6.8-1.44-2.35 0-4.65.47-6.8 1.44A14.97 14.97 0 0 1 8.8 4.4L8.6 4a16.7 16.7 0 0 0-4.14 1.34C1.85 9.2 1.13 12.96 1.5 16.67a16.9 16.9 0 0 0 5.08 2.58l1.1-1.5c-.6-.23-1.17-.52-1.71-.86.14.1.29.2.44.29 1.66 1 3.64 1.57 5.59 1.57 1.95 0 3.93-.57 5.59-1.57.15-.09.3-.19.44-.29-.54.34-1.11.63-1.71.86l1.1 1.5a16.9 16.9 0 0 0 5.08-2.58c.44-4.3-.76-8.02-2.96-11.33ZM9.55 14.57c-.83 0-1.5-.77-1.5-1.72 0-.95.66-1.72 1.5-1.72.84 0 1.51.78 1.5 1.72 0 .95-.66 1.72-1.5 1.72Zm4.9 0c-.83 0-1.5-.77-1.5-1.72 0-.95.66-1.72 1.5-1.72.84 0 1.51.78 1.5 1.72 0 .95-.66 1.72-1.5 1.72Z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M19.54 5.34A16.7 16.7 0 0 0 15.4 4l-.2.4a14.97 14.97 0 0 1 3.6 1.26c-2.15-.97-4.45-1.44-6.8-1.44-2.35 0-4.65.47-6.8 1.44A14.97 14.97 0 0 1 8.8 4.4L8.6 4a16.7 16.7 0 0 0-4.14 1.34C1.85 9.2 1.13 12.96 1.5 16.67a16.9 16.9 0 0 0 5.08 2.58l1.1-1.5c-.6-.23-1.17-.52-1.71-.86.14.1.29.2.44.29 1.66 1 3.64 1.57 5.59 1.57 1.95 0 3.93-.57 5.59-1.57.15-.09.3-.19.44-.29-.54.34-1.11.63-1.71.86l1.1 1.5a16.9 16.9 0 0 0 5.08-2.58c.44-4.3-.76-8.02-2.96-11.33ZM9.55 14.57c-.83 0-1.5-.77-1.5-1.72 0-.95.66-1.72 1.5-1.72.84 0 1.51.78 1.5 1.72 0 .95-.66 1.72-1.5 1.72Zm4.9 0c-.83 0-1.5-.77-1.5-1.72 0-.95.66-1.72 1.5-1.72.84 0 1.51.78 1.5 1.72 0 .95-.66 1.72-1.5 1.72Z'/%3E%3C/svg%3E");
+}
+
+.fa-brands.fa-github::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 .5C5.65.5.5 5.73.5 12.18c0 5.16 3.3 9.54 7.88 11.08.58.1.79-.26.79-.57 0-.28-.01-1.03-.02-2.03-3.2.71-3.88-1.57-3.88-1.57-.52-1.36-1.28-1.72-1.28-1.72-1.04-.73.08-.72.08-.72 1.16.08 1.76 1.21 1.76 1.21 1.02 1.79 2.68 1.28 3.34.98.1-.76.4-1.28.73-1.57-2.55-.29-5.23-1.3-5.23-5.8 0-1.28.45-2.32 1.18-3.14-.12-.29-.51-1.46.11-3.04 0 0 .96-.32 3.15 1.2a10.8 10.8 0 0 1 5.74 0c2.19-1.52 3.15-1.2 3.15-1.2.62 1.58.23 2.75.11 3.04.73.82 1.18 1.86 1.18 3.14 0 4.51-2.69 5.5-5.25 5.79.41.36.78 1.08.78 2.18 0 1.57-.01 2.83-.01 3.22 0 .31.2.68.8.57A11.7 11.7 0 0 0 23.5 12.18C23.5 5.73 18.35.5 12 .5Z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 .5C5.65.5.5 5.73.5 12.18c0 5.16 3.3 9.54 7.88 11.08.58.1.79-.26.79-.57 0-.28-.01-1.03-.02-2.03-3.2.71-3.88-1.57-3.88-1.57-.52-1.36-1.28-1.72-1.28-1.72-1.04-.73.08-.72.08-.72 1.16.08 1.76 1.21 1.76 1.21 1.02 1.79 2.68 1.28 3.34.98.1-.76.4-1.28.73-1.57-2.55-.29-5.23-1.3-5.23-5.8 0-1.28.45-2.32 1.18-3.14-.12-.29-.51-1.46.11-3.04 0 0 .96-.32 3.15 1.2a10.8 10.8 0 0 1 5.74 0c2.19-1.52 3.15-1.2 3.15-1.2.62 1.58.23 2.75.11 3.04.73.82 1.18 1.86 1.18 3.14 0 4.51-2.69 5.5-5.25 5.79.41.36.78 1.08.78 2.18 0 1.57-.01 2.83-.01 3.22 0 .31.2.68.8.57A11.7 11.7 0 0 0 23.5 12.18C23.5 5.73 18.35.5 12 .5Z'/%3E%3C/svg%3E");
+}
+
+.fa-brands.fa-instagram::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm-.2 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 2.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 6.5Zm0 2A3.5 3.5 0 1 0 15.5 12 3.5 3.5 0 0 0 12 8.5ZM17.75 5.8a1.15 1.15 0 1 1-1.15 1.15 1.15 1.15 0 0 1 1.15-1.15Z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm-.2 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 2.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 6.5Zm0 2A3.5 3.5 0 1 0 15.5 12 3.5 3.5 0 0 0 12 8.5ZM17.75 5.8a1.15 1.15 0 1 1-1.15 1.15 1.15 1.15 0 0 1 1.15-1.15Z'/%3E%3C/svg%3E");
+}
+
+.fa-brands.fa-whatsapp::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12.04 2a9.9 9.9 0 0 0-8.52 14.95L2 22l5.19-1.36A9.9 9.9 0 1 0 12.04 2Zm0 1.9a8 8 0 0 1 6.82 12.19l-.27.42.9 2.96-3.03-.8-.4.24a8 8 0 1 1-4.02-14.91Zm4.38 10.1c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.01-.38-1.92-1.22-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.31-.74-1.8-.2-.47-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 1.99 0 1.17.86 2.3.98 2.46.12.16 1.68 2.58 4.06 3.61.57.25 1.02.4 1.36.51.57.18 1.09.15 1.5.09.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28Z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12.04 2a9.9 9.9 0 0 0-8.52 14.95L2 22l5.19-1.36A9.9 9.9 0 1 0 12.04 2Zm0 1.9a8 8 0 0 1 6.82 12.19l-.27.42.9 2.96-3.03-.8-.4.24a8 8 0 1 1-4.02-14.91Zm4.38 10.1c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.01-.38-1.92-1.22-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.31-.74-1.8-.2-.47-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 1.99 0 1.17.86 2.3.98 2.46.12.16 1.68 2.58 4.06 3.61.57.25 1.02.4 1.36.51.57.18 1.09.15 1.5.09.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28Z'/%3E%3C/svg%3E");
+}
+
+.fa-brands.fa-youtube::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M23.5 7.2a3 3 0 0 0-2.1-2.12C19.54 4.5 12 4.5 12 4.5s-7.54 0-9.4.58A3 3 0 0 0 .5 7.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.12c1.86.58 9.4.58 9.4.58s7.54 0 9.4-.58a3 3 0 0 0 2.1-2.12A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-4.8ZM9.6 15.58V8.42L15.9 12 9.6 15.58Z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M23.5 7.2a3 3 0 0 0-2.1-2.12C19.54 4.5 12 4.5 12 4.5s-7.54 0-9.4.58A3 3 0 0 0 .5 7.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.12c1.86.58 9.4.58 9.4.58s7.54 0 9.4-.58a3 3 0 0 0 2.1-2.12A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-4.8ZM9.6 15.58V8.42L15.9 12 9.6 15.58Z'/%3E%3C/svg%3E");
+}
