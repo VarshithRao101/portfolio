@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const staggerEls = document.querySelectorAll('.stagger');
     const metricEls = [
         { el: document.getElementById('m1'), target: 150, suffix: '+' },
-        { el: document.getElementById('m2'), target: 10,  suffix: '+' },
+        { el: document.getElementById('m2'), target: 3,  suffix: '+' },
         { el: document.getElementById('m3'), target: 99,  suffix: '%' },
     ];
     let metricsDone = false;
