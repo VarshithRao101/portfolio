@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "portfolio",
+  "name": "trntbee",
   "compatibility_date": "2026-05-29",
   "observability": {
     "enabled": true
