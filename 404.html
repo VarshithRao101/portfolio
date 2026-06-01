@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Swarm Node Not Found | TRNTBEE</title>
+  <meta name="description" content="The page you are looking for does not exist in the TRNTBEE ecosystem. Return to the hive." />
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --y1: #f5c518;   /* primary gold */
+      --y3: #ffd84d;   /* light gold */
+      --g1: #09090b;   /* near black background */
+      --g2: #121214;   /* secondary background */
+      --g4: #2b2b2f;   /* border line */
+      --g6: #8e8e93;   /* subdued text */
+      --white: #ffffff;
+      --font-head: 'Syne', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+      --font-serif: 'Instrument Serif', serif;
+      --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--g1);
+      color: var(--white);
+      font-family: var(--font-head);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Vignette overlay */
+    body::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(9, 9, 11, 0.2) 0%, rgba(9, 9, 11, 0.85) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Grain Overlay */
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0.3;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      padding: 40px 24px;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Hexagon Grid Animation background */
+    .hex-bg {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.08;
+      z-index: 0;
+      pointer-events: none;
+      animation: rotate-grid 120s linear infinite;
+    }
+
+    @keyframes rotate-grid {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Error Code */
+    .error-code {
+      font-size: clamp(100px, 15vw, 180px);
+      font-weight: 800;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      color: var(--white);
+      position: relative;
+      margin-bottom: 24px;
+      text-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .error-code span {
+      color: var(--y1);
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    /* Floating bee icon */
+    .bee-container {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 16px;
+      animation: bee-bob 4s ease-in-out infinite;
+      z-index: 15;
+    }
+
+    .bee-icon {
+      font-size: 54px;
+      color: var(--y1);
+      filter: drop-shadow(0 0 15px rgba(245, 197, 24, 0.4));
+    }
+
+    @keyframes bee-bob {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-15px) rotate(5deg); }
+    }
+
+    /* Description */
+    .error-tagline {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--y1);
+      margin-bottom: 16px;
+    }
+
+    .error-h1 {
+      font-size: clamp(24px, 5vw, 36px);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .error-h1 em {
+      font-style: italic;
+      font-family: var(--font-serif);
+      color: var(--y1);
+    }
+
+    .error-p {
+      font-size: 15px;
+      color: var(--g6);
+      line-height: 1.7;
+      max-width: 460px;
+      margin-bottom: 40px;
+    }
+
+    /* Button */
+    .btn-return {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--y1);
+      color: var(--g1);
+      padding: 14px 32px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(245, 197, 24, 0.15);
+    }
+
+    .btn-return:hover {
+      background: var(--y3);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(245, 197, 24, 0.3);
+    }
+
+    .btn-return:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Grid -->
+  <div class="hex-bg">
+    <svg viewBox="0 0 100 100" width="800" height="800">
+      <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" fill="none" stroke="rgba(245, 197, 24, 0.15)" stroke-width="0.5"/>
+      <polygon points="50,15 82,31 82,69 50,85 18,69 18,31" fill="none" stroke="rgba(245, 197, 24, 0.08)" stroke-width="0.3"/>
+      <polygon points="50,25 74,37 74,63 50,75 26,63 26,37" fill="none" stroke="rgba(245, 197, 24, 0.04)" stroke-width="0.2"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <!-- Floating Swarm Icon -->
+    <div class="bee-container">
+      <i class="fa-solid fa-hexagon-nodes bee-icon"></i>
+    </div>
+
+    <!-- Error Label -->
+    <div class="error-tagline">System Status: 404</div>
+    
+    <!-- Code -->
+    <div class="error-code">4<span>0</span>4</div>
+
+    <!-- Title -->
+    <h1 class="error-h1">Lost in the <em>swarm</em>?</h1>
+    
+    <!-- Paragraph -->
+    <p class="error-p">
+      The active node or sector you are trying to query does not exist. It may have been relocated, refactored, or compiled offline.
+    </p>
+
+    <!-- Return CTA -->
+    <a href="index.html" class="btn-return">
+      Return to Hive <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+
+</body>
+</html>
