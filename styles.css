@@ -1564,11 +1564,11 @@ body::before {
 }
 
 .track-left {
-    animation: testimonials-marquee-left 35s linear infinite;
+    animation: testimonials-marquee-left 18s linear infinite;
 }
 
 .track-right {
-    animation: testimonials-marquee-right 35s linear infinite;
+    animation: testimonials-marquee-right 18s linear infinite;
 }
 
 .testimonials-marquee-row:hover .testimonials-marquee-track {
