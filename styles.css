@@ -1534,44 +1534,63 @@ body::before {
     overflow: hidden; /* Prevent horizontal scrollbars from the marquee */
 }
 
-/* Default testimonials grid (for PC POV sliding animation) */
-@media (min-width: 901px) {
-    .testimonials-grid {
-        display: flex !important;
-        flex-direction: row !important;
-        grid-template-columns: none !important;
-        gap: 24px !important;
-        width: max-content !important;
-        animation: reviews-marquee 45s linear infinite !important;
-        margin-top: 64px;
-    }
-    
-    .testimonials-grid:hover {
-        animation-play-state: paused !important;
-    }
-    
-    .testimonial-card {
-        width: 420px !important;
-        flex-shrink: 0 !important;
-    }
-}
-
-@keyframes reviews-marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50% - 12px)); }
-}
-
-.testimonials-grid {
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px; 
+/* Default testimonials 3-row infinite marquee layout (desktop/tablet/mobile base) */
+.testimonials-marquee-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     margin-top: 64px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+}
+
+.testimonials-marquee-row {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    user-select: none;
+}
+
+.testimonials-marquee-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    will-change: transform;
+}
+
+.track-left {
+    animation: testimonials-marquee-left 35s linear infinite;
+}
+
+.track-right {
+    animation: testimonials-marquee-right 35s linear infinite;
+}
+
+.testimonials-marquee-row:hover .testimonials-marquee-track {
+    animation-play-state: paused !important;
+}
+
+@keyframes testimonials-marquee-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes testimonials-marquee-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
 }
 
 .testimonial-card {
+    width: 380px !important;
+    flex-shrink: 0 !important;
     border: 1px solid var(--g4); 
     padding: 32px;
-    border-radius: 3px; 
+    border-radius: 8px; 
     background: var(--g1);
     transition: border-color 0.3s, transform 0.3s;
 }
@@ -2718,8 +2737,11 @@ footer::before {
 
     .hero-inner {
         min-height: var(--app-height, 100vh);
-        padding: 118px 20px 56px !important;
-        align-items: flex-start;
+        padding: 118px 20px 72px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
     }
     
     .hero-eyebrow {
@@ -2870,168 +2892,236 @@ footer::before {
     }
 
     .projects-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 12px !important;
-        align-items: stretch !important;
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
     }
     
     .project-card {
         height: auto !important;
-        border-radius: 18px !important;
+        border-radius: 20px !important;
+        background: rgba(18, 18, 20, 0.75) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        overflow: hidden !important;
+        transition: transform 0.3s var(--ease-spring), border-color 0.3s;
     }
     
     .project-card:hover {
-        transform: none !important;
+        transform: translateY(-4px) !important;
+        border-color: rgba(245, 197, 24, 0.4) !important;
     }
 
     .project-card .w {
         display: flex !important;
         flex-direction: column !important;
-        height: 100% !important;
+        height: auto !important;
         pointer-events: auto !important;
     }
 
     .project-card .f,
     .project-card .b {
         width: 100% !important;
-        background: linear-gradient(180deg, rgba(18, 18, 20, 0.98), rgba(9, 9, 11, 0.98)) !important;
-        border-color: rgba(255, 255, 255, 0.08) !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        min-height: auto !important;
     }
 
     .project-card .f {
-        min-height: 150px !important;
-        padding: 14px 14px 12px !important;
-        border-radius: 18px 18px 0 0 !important;
-        border-bottom: none !important;
-        justify-content: flex-start !important;
-    }
-
-    .project-card .b {
+        position: relative !important;
+        padding: 16px 16px 8px !important;
         display: flex !important;
         flex-direction: column !important;
-        align-items: flex-start !important;
-        justify-content: flex-end !important;
-        gap: 10px !important;
-        min-height: 98px !important;
-        padding: 0 14px 14px !important;
-        border-radius: 0 0 18px 18px !important;
-        border-top: none !important;
     }
-
-    .project-img-placeholder,
-    .dev-ribbon,
-    .overlay-title,
-    .overlay-desc {
-        display: none !important;
-    }
-
-    #projects-grid .project-card .f {
-        min-height: 220px !important;
-    }
-
+    
+    /* Cover Image styling */
     #projects-grid .project-card .f img {
         display: block !important;
         width: 100% !important;
-        height: 78px !important;
+        height: 180px !important;
         object-fit: cover !important;
-        border-radius: 12px !important;
-        margin-bottom: 10px !important;
-        filter: grayscale(0%) !important;
-        opacity: 0.96;
+        border-radius: 14px !important;
+        margin-bottom: 12px !important;
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        opacity: 0.95 !important;
     }
 
     #projects-grid .project-card.in-dev .f img {
-        filter: grayscale(22%) brightness(0.82) !important;
+        filter: grayscale(20%) brightness(0.85) !important;
     }
 
+    /* Fallback placeholder styled attractively */
+    .project-img-placeholder {
+        display: flex !important;
+        width: 100% !important;
+        height: 180px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: linear-gradient(135deg, rgba(28, 28, 31, 0.6), rgba(18, 18, 20, 0.9)) !important;
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        border-radius: 14px !important;
+        margin-bottom: 12px !important;
+    }
+    .project-img-placeholder i {
+        font-size: 38px !important;
+        color: var(--y1) !important;
+        text-shadow: 0 0 15px rgba(245, 197, 24, 0.4) !important;
+    }
+
+    /* Dev ribbon styled cleanly inside image card */
+    .dev-ribbon {
+        display: block !important;
+        position: absolute !important;
+        top: 28px !important;
+        right: 28px !important;
+        background: rgba(245, 197, 24, 0.95) !important;
+        color: var(--g1) !important;
+        font-size: 9px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.05em !important;
+        text-transform: uppercase !important;
+        padding: 5px 10px !important;
+        border-radius: 6px !important;
+        z-index: 5 !important;
+        box-shadow: 0 4px 12px rgba(245, 197, 24, 0.25) !important;
+    }
+
+    /* Premium Category tags floating over image */
     .project-card .project-tag {
-        position: static !important;
+        position: absolute !important;
+        top: 28px !important;
+        left: 28px !important;
         display: inline-flex !important;
         align-self: flex-start !important;
-        font-size: 7px !important;
-        line-height: 1 !important;
-        margin-bottom: 10px !important;
-        padding: 5px 7px !important;
+        font-size: 8.5px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.06em !important;
+        text-transform: uppercase !important;
+        padding: 6px 12px !important;
+        border-radius: 6px !important;
+        z-index: 5 !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
     }
     
     .project-card-info {
         position: relative !important;
         height: auto !important;
         background: transparent !important;
-        padding: 0 !important;
-        min-height: 0 !important;
-        border-top: none !important;
+        padding: 0 4px !important;
+        min-height: auto !important;
+        border: none !important;
         text-align: left !important;
-        z-index: 1;
+        z-index: 1 !important;
     }
 
     .project-card .project-title {
-        font-size: 14px !important;
-        line-height: 1.35 !important;
-        margin-bottom: 8px !important;
-        font-weight: 700 !important;
+        font-size: 20px !important;
+        font-weight: 800 !important;
+        line-height: 1.25 !important;
+        margin-bottom: 6px !important;
         color: var(--white) !important;
         letter-spacing: -0.02em !important;
-        text-shadow: none;
-        display: -webkit-box !important;
-        -webkit-line-clamp: 2 !important;
-        -webkit-box-orient: vertical !important;
-        overflow: hidden !important;
+        text-shadow: none !important;
     }
 
     .project-card .project-desc {
-        display: -webkit-box !important;
-        -webkit-line-clamp: 3 !important;
-        -webkit-box-orient: vertical !important;
-        overflow: hidden !important;
-        font-size: 11px !important;
-        line-height: 1.55 !important;
-        color: var(--g6) !important;
-        min-height: 50px !important;
+        display: none !important; /* Hide duplicate front description */
     }
 
+    /* Back element: Details container */
+    .project-card .b {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        gap: 12px !important;
+        padding: 0 20px 20px !important;
+    }
+
+    .overlay-title {
+        display: none !important; /* Hide duplicate title on mobile */
+    }
+
+    /* Display the full overlay description beautifully */
+    .overlay-desc {
+        display: block !important;
+        font-size: 13.5px !important;
+        line-height: 1.65 !important;
+        color: var(--g7) !important;
+        margin-bottom: 4px !important;
+        text-align: left !important;
+    }
+
+    /* Tech Stack Tag chips */
     .tech-stack-row {
         display: flex !important;
         justify-content: flex-start !important;
-        gap: 6px !important;
-        margin-bottom: 0 !important;
+        gap: 8px !important;
+        margin-bottom: 4px !important;
         flex-wrap: wrap !important;
     }
 
+    /* Allow all tech chips to render nicely */
     .tech-stack-row .tech-tag:nth-child(n + 3) {
-        display: none !important;
+        display: inline-flex !important;
     }
 
     .tech-tag {
-        padding: 4px 7px !important;
-        font-size: 8px !important;
+        padding: 5px 10px !important;
+        font-size: 9.5px !important;
+        font-weight: 600 !important;
+        border-radius: 4px !important;
+        background: rgba(255, 255, 255, 0.04) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        color: var(--y3) !important;
+        letter-spacing: 0.03em !important;
+        text-transform: uppercase !important;
     }
 
+    /* Multi-column Action Link buttons */
     .project-links {
         width: 100% !important;
         display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 8px !important;
-        justify-content: stretch !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+        margin-top: 4px !important;
     }
 
     .project-link {
         width: 100% !important;
-        min-height: 36px !important;
+        min-height: 42px !important;
         justify-content: center !important;
-        padding: 9px 10px !important;
-        font-size: 9px !important;
-        letter-spacing: 0.04em !important;
+        align-items: center !important;
+        display: inline-flex !important;
+        padding: 12px 16px !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        border-radius: 8px !important;
+        letter-spacing: 0.05em !important;
+        text-transform: uppercase !important;
+        transition: background 0.3s, transform 0.2s;
     }
 
+    /* Dev notice row below buttons */
     .dev-notice {
         width: 100% !important;
-        min-height: 36px !important;
+        min-height: 42px !important;
         justify-content: center !important;
-        padding: 8px 10px !important;
-        font-size: 8.5px !important;
+        align-items: center !important;
+        display: flex !important;
+        padding: 10px 16px !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
         letter-spacing: 0.03em !important;
-        margin-top: 0 !important;
+        margin-top: 4px !important;
+        background: rgba(245, 197, 24, 0.06) !important;
+        border: 1px solid rgba(245, 197, 24, 0.15) !important;
+        color: var(--y1) !important;
+        border-radius: 8px !important;
     }
 
     .dev-notice i {
@@ -3156,29 +3246,21 @@ footer::before {
         grid-column: 1 / -1;
     }
 
-    /* Swipeable Horizontal Compact Reviews on Mobile POV */
+    /* 3-Row Continuous Testimonials Marquee on Mobile POV */
     .testimonials-section {
         padding: 60px 0 !important;
     }
-    .testimonials-grid {
-        display: flex !important;
-        flex-direction: row !important;
-        grid-template-columns: none !important;
-        overflow-x: auto !important;
-        scroll-snap-type: x mandatory !important;
-        -webkit-overflow-scrolling: touch !important;
+    .testimonials-marquee-wrapper {
         gap: 16px !important;
-        padding: 10px 4px !important;
         margin-top: 36px !important;
     }
-    .testimonials-grid::-webkit-scrollbar {
-        display: none;
+    .testimonials-marquee-track {
+        gap: 16px !important;
     }
     .testimonial-card {
-        flex: 0 0 290px !important;
-        scroll-snap-align: start !important;
+        width: 300px !important;
         padding: 24px 20px !important;
-        border-radius: 6px !important;
+        border-radius: 8px !important;
     }
     .quote-mark {
         font-size: 36px !important;
