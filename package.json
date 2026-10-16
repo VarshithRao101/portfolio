@@ -1,7 +1,7 @@
 {
   "name": "trnt-bee-portfolio",
   "version": "1.0.0",
-  "description": "Premium glassmorphic portfolio and community portal for TRNT BEE & BEE SOCIETY.",
+  "description": "TRNT BEE \u2014 four divisions: Technologies, Digital Solutions, Merchandise, BEE SOCIETY.",
   "main": "index.html",
   "scripts": {
     "start": "npx http-server -p 3000",
@@ -22,8 +22,5 @@
   "devDependencies": {
     "http-server": "^14.1.1",
     "wrangler": "^3.0.0"
-  },
-  "dependencies": {
-    "animejs": "^4.4.1"
   }
 }

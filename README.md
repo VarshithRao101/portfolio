@@ -60,6 +60,21 @@ We strive to create products that improve productivity, enhance learning, simpli
 
 ---
 
+# Four Divisions
+
+| Division | What it does | Current work |
+|----------|--------------|--------------|
+| TRNT BEE Technologies | Research & development | SIH 2026 Dam Break Inundation Modelling, Thrufter, Cascade |
+| TRNT BEE Digital Solutions | Apps, platforms and games | ZETA (AI-thon), Inspire (PDemo 101), VoidFall, and the product catalogue below |
+| TRNT BEE Merchandise | Limited in-house merch drops | Hive Store (`shop.html`) |
+| BEE SOCIETY | College builder community | Open build sessions, project swarms |
+
+## Editing the site
+
+All content lives in `js/data.js`: research programs, products, and merch. To add a merch photo, put it in `images/merch/` and set the product's `image` field.
+
+---
+
 # Product Ecosystem
 
 | Category | Product |
@@ -83,27 +98,27 @@ TRNT BEE is built around a collection of interconnected software products, each 
 <br>
 
 <p align="center">
-  <img src="images/beeprepare_mockup.png" alt="BeePrepare" width="48%">
+  <img src="images/beeprepare_mockup.webp" alt="BeePrepare" width="48%">
   &nbsp;
-  <img src="images/trekvana_mockup.png" alt="TrekVana" width="48%">
+  <img src="images/trekvana_mockup.webp" alt="TrekVana" width="48%">
 </p>
 <p align="center">
-  <img src="images/hivemind_mockup.png" alt="HiveMind" width="48%">
+  <img src="images/hivemind_mockup.webp" alt="HiveMind" width="48%">
   &nbsp;
-  <img src="images/beefile_mockup.png" alt="BeeFile" width="48%">
+  <img src="images/beefile_mockup.webp" alt="BeeFile" width="48%">
 </p>
 <p align="center">
-  <img src="images/rephrasebee_mockup.png" alt="RephraseBee" width="48%">
+  <img src="images/rephrasebee_mockup.webp" alt="RephraseBee" width="48%">
   &nbsp;
-  <img src="images/letscook_mockup.png" alt="LetsCook" width="48%">
+  <img src="images/letscook_mockup.webp" alt="LetsCook" width="48%">
 </p>
 <p align="center">
-  <img src="images/5indshow_mockup.png" alt="5IndShow" width="48%">
+  <img src="images/5indshow_mockup.webp" alt="5IndShow" width="48%">
   &nbsp;
-  <img src="images/unigames_mockup.png" alt="UniPlay" width="48%">
+  <img src="images/unigames_mockup.webp" alt="UniPlay" width="48%">
 </p>
 <p align="center">
-  <img src="images/onepunch_mockup.png" alt="One Punch Fall" width="48%">
+  <img src="images/onepunch_mockup.webp" alt="One Punch Fall" width="48%">
 </p>
 
 <br>
@@ -351,7 +366,7 @@ See the LICENSE file within each repository for additional information.
 # Founder
 
 <p align="center">
-  <img src="images/adminphoto.jpg" alt="Varshith Rao" width="150" style="border-radius: 50%;">
+  <img src="images/founder.webp" alt="Varshith Rao" width="150" style="border-radius: 50%;">
 </p>
 
 **Varshith Rao**
@@ -363,7 +378,7 @@ Building intelligent software products across Artificial Intelligence, Cybersecu
 ---
 
 <p align="center">
-  <img src="images/logo.png" alt="TRNT BEE Logo" width="80">
+  <img src="images/brand/trntbee-logo.webp" alt="TRNT BEE Logo" width="80">
 </p>
 
 <p align="center">

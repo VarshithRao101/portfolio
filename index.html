@@ -1,1059 +1,287 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TRNTBEE — Revenue Software &amp; Open Innovation Ecosystem</title>
-  <meta name="description" content="Official portfolio of TRNTBEE, a tech-based company building high-impact revenue-generating software products, backed by the open swarms of BEE SOCIETY." />
-  <link rel="icon" type="image/png" href="images/logo.png" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TRNT BEE — One hive. Four divisions.</title>
+  <meta name="description" content="TRNT BEE is a student-led software studio: Technologies (R&D), Digital Solutions, Merchandise and BEE SOCIETY." />
+  <meta name="theme-color" content="#070708" />
+  <meta property="og:title" content="TRNT BEE" />
+  <meta property="og:description" content="One hive. Four divisions. R&D, digital products, merch and the BEE SOCIETY community." />
+  <meta property="og:image" content="images/brand/trntbee-logo.webp" />
+  <link rel="icon" href="images/brand/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="icons.css" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script>document.documentElement.classList.add('js')</script>
 </head>
-<body>
+<body class="is-loading">
 
-  <!-- Scroll Progress -->
-  <div id="scroll-progress"></div>
-
-  <!-- ==================== HERO WITH VIDEO BG ==================== -->
-  <section class="hero-section section" id="home">
-    <!-- Looping Background Video -->
-    <video id="hero-video" class="hero-video" muted playsinline autoplay loop preload="auto">
-      <source src="images/bg_video.mp4" type="video/mp4" />
-    </video>
-    <!-- Vignette overlay for text contrast -->
-    <div class="hero-video-overlay"></div>
-
-    <!-- Glassmorphic Navbar -->
-    <nav class="navbar" id="navbar">
-      <div class="nav-inner">
-        <a href="#" class="nav-logo">
-          <img src="images/logo.png" alt="TRNT BEE Logo" width="38" height="38" style="border-radius:8px;object-fit:contain;" />
-          TRNT<span>BEE</span>
-        </a>
-        <ul class="nav-links">
-          <li><a href="#about">Our Story</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#services">Divisions</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="nav-actions">
-          <a href="#contact" class="nav-cta">Get in Touch <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-        <button class="hamburger" id="hamburger">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </nav>
-    <div class="mobile-menu" id="mobile-menu">
-      <a href="#about" class="mob-link">Our Story</a>
-      <a href="#projects" class="mob-link">Projects</a>
-      <a href="#services" class="mob-link">Divisions</a>
-      <a href="#faq" class="mob-link">FAQ</a>
-      <a href="#contact" class="mob-link" style="color:var(--y1)">Contact →</a>
-    </div>
-
-    <!-- Hero Content Center -->
-    <div class="container hero-inner">
-      <div class="hero-content-center">
-        <div class="hero-eyebrow">
-          <div class="hero-eyebrow-line"></div>
-          Launching High-Performance Tech
-          <div class="hero-eyebrow-line"></div>
-        </div>
-        <h1 class="hero-h1">
-          <span class="line"><span id="h1-l1">Software that</span></span>
-          <span class="line"><span id="h1-l2">scales.<span class="accent"> Indeed.</span></span></span>
-        </h1>
-        <p class="hero-desc">
-          We design, build, and deploy successful revenue-generating software products. Backed by the BEE SOCIETY swarm — a collaborative college ecosystem where builders explore next-gen tech stacks and build projects together.
-        </p>
-        <div class="hero-btns">
-          <a href="#projects" class="btn-primary">
-            Explore Projects <i class="fa-solid fa-arrow-right"></i>
-          </a>
-          <a href="#about" class="btn-ghost">
-            Our Story <i class="fa-solid fa-circle-info"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-hint-line"></div>
-    </div>
-  </section>
-
-  <!-- ==================== MARQUEE ==================== -->
-  <div class="marquee-section">
-    <div class="marquee-track" id="marquee">
-      <div class="marquee-item"><span>Web Development</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>AI Engineering</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Game Design</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Serverless Architecture</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>UI/UX Systems</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Lag-Free Optimization</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Product Launch</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>BEE SOCIETY</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Open-Source Swarms</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Web Development</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>AI Engineering</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Game Design</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Serverless Architecture</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>UI/UX Systems</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Lag-Free Optimization</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Product Launch</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>BEE SOCIETY</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Open-Source Swarms</span><div class="dot"></div></div>
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-bee"><i class="bee"></i><i class="bee fill" id="loader-fill"></i></div>
+      <div class="loader-count"><span id="loader-num">000</span> / 100</div>
     </div>
   </div>
+  <div class="loader-curtain" id="curtain"></div>
 
-  <!-- ==================== ABOUT ==================== -->
-  <section class="about-section section" id="about" data-step="01" data-story="Origin Story">
-    <div class="container">
-      <div class="section-label reveal up">Core Mission</div>
-      <div class="about-grid">
-        <div class="about-text reveal left">
-          <h2>Meet <em>TRNTBEE</em> — built from the ground up.</h2>
-          <p>TRNTBEE was established in our first year of college with a bold mission: to design, build, and deploy successful, revenue-generating software products.</p>
-          <p>To fuel our engineering culture, we established the BEE SOCIETY — a branched collaborative swarm of student builders who explore cutting-edge tech stacks and collaborate on open-source projects.</p>
+  <div class="grain"></div>
+  <div class="cursor" id="cursor-dot"><div class="cursor-dot"></div></div>
+  <div class="cursor" id="cursor-ring"><div class="cursor-ring"><span id="cursor-label">VIEW</span></div></div>
 
-        </div>
-        <div class="timeline reveal right">
-          <div class="timeline-item">
-            <div class="timeline-dot active"></div>
-            <div class="timeline-content">
-              <div class="timeline-meta">
-                <span class="timeline-co">Revenue Sector</span>
-                <span class="badge badge-green">Active</span>
-              </div>
-              <div class="timeline-role">Deploying BeePrepare &amp; TrekVana bookings platform at scale.</div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-meta">
-                <span class="timeline-co">BEE SOCIETY Swarm</span>
-                <span class="badge badge-grey">Launched 2025</span>
-              </div>
-              <div class="timeline-role">Community branching of college developers exploring tech stacks.</div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-meta">
-                <span class="timeline-co">Genesis Phase</span>
-                <span class="badge badge-grey">First Semester</span>
-              </div>
-              <div class="timeline-role">Founded by first-year freshmen to disrupt student portfolios.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== PROCESS ==================== -->
-  <section class="process-section section" data-step="02" data-story="Build Flow">
-    <div class="container">
-      <div class="section-label reveal up">Engineering Flow</div>
-      <h2 class="section-title reveal up">How we <em>build</em> things.</h2>
-      <p class="section-sub reveal up">How we conceptualize open-source ideas and push them into scalable revenue architectures.</p>
-      <div class="process-grid stagger">
-        <div class="process-item">
-          <div class="process-num">01</div>
-          <div class="process-icon"><i class="fa-solid fa-lightbulb"></i></div>
-          <div class="process-h">Ideate in Swarm</div>
-          <p class="process-p">Open collaborative sessions where BEE SOCIETY members propose, vote, and prototype rapidly.</p>
-        </div>
-        <div class="process-item">
-          <div class="process-num">02</div>
-          <div class="process-icon"><i class="fa-solid fa-code-branch"></i></div>
-          <div class="process-h">Fork &amp; Build</div>
-          <p class="process-p">Each swarm team forks the base template and engineers independently on their stack module.</p>
-        </div>
-        <div class="process-item">
-          <div class="process-num">03</div>
-          <div class="process-icon"><i class="fa-solid fa-gauge-high"></i></div>
-          <div class="process-h">Optimize &amp; Test</div>
-          <p class="process-p">60fps render targets. Lighthouse audits. Zero-bloat engineering principles applied everywhere.</p>
-        </div>
-        <div class="process-item">
-          <div class="process-num">04</div>
-          <div class="process-icon"><i class="fa-solid fa-rocket"></i></div>
-          <div class="process-h">Launch &amp; Scale</div>
-          <p class="process-p">Deploy to production. Monitor revenue metrics. Iterate on real user feedback loops at speed.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== PROJECTS ==================== -->
-  <section class="projects-section section" id="projects" data-step="03" data-story="Live Products">
-    <div class="container">
-      <div class="projects-header">
-        <div>
-          <div class="section-label reveal up">Projects Portal</div>
-          <h2 class="section-title reveal up">What we've <em>shipped</em>.</h2>
-          <p class="section-sub reveal up">Core commercial start-up products and collaborative community swarm tools.</p>
-        </div>
-        <div class="projects-tabs" id="tabs">
-          <button class="tab-btn active" data-filter="all">All</button>
-          <button class="tab-btn" data-filter="startup">Start-Up</button>
-          <button class="tab-btn" data-filter="community">Community</button>
-        </div>
-      </div>
-      
-      <!-- Upgraded 3D Direction Aware Rotating Boxes Swarm -->
-      <ul class="projects-grid stagger" id="projects-grid">
-
-        <!-- BeePrepare -->
-        <li class="project-card reveal scale" data-cat="startup">
-          <div class="w">
-            <div class="f">
-              <img src="images/beeprepare_mockup.png" alt="BeePrepare" onerror="this.parentNode.innerHTML='<div class=\'project-img-placeholder\'><i class=\'fa-solid fa-graduation-cap\'></i></div>'"/>
-              <span class="project-tag tag-startup">Start-Up</span>
-              <div class="project-card-info">
-                <h4 class="project-title">BeePrepare</h4>
-                <p class="project-desc">High-performance EdTech exam paper generator platform.</p>
-              </div>
-            </div>
-            <div class="b">
-              <h4 class="overlay-title">BeePrepare</h4>
-              <p class="overlay-desc">High-performance EdTech exam paper generator platform. Build, compile, and format question databases for teachers instantly.</p>
-              <div class="tech-stack-row">
-                <span class="tech-tag">React / NextJS</span>
-                <span class="tech-tag">Node PDF</span>
-                <span class="tech-tag">SaaS Core</span>
-              </div>
-              <div class="project-links">
-                <a href="https://beeprepare.in" target="_blank" class="project-link">Open App <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                <button class="project-link demo-btn" data-demo-id="beeprepare">Watch Demo <i class="fa-solid fa-play"></i></button>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        <!-- TrekVana -->
-        <li class="project-card reveal scale in-dev" data-cat="startup">
-          <div class="w">
-            <div class="f">
-              <div class="dev-ribbon">In Dev</div>
-              <img src="images/trekvana_mockup.png" alt="TrekVana" onerror="this.parentNode.innerHTML='<div class=\'project-img-placeholder\'><i class=\'fa-solid fa-map\'></i></div>'"/>
-              <span class="project-tag tag-indev">In Development</span>
-              <div class="project-card-info">
-                <h4 class="project-title">TrekVana</h4>
-                <p class="project-desc">Premium tour bookings and holiday itinerary management platform.</p>
-              </div>
-            </div>
-            <div class="b">
-              <h4 class="overlay-title">TrekVana</h4>
-              <p class="overlay-desc">Premium tour bookings and holiday itinerary management platform with high-speed geographic queries and Stripe billing.</p>
-              <div class="tech-stack-row">
-                <span class="tech-tag">NextJS</span>
-                <span class="tech-tag">Geolocation API</span>
-                <span class="tech-tag">Stripe</span>
-              </div>
-              <div class="dev-notice"><i class="fa-solid fa-gear"></i> Actively being built — launching soon</div>
-            </div>
-          </div>
-        </li>
-
-        <!-- 5IndShow (Moved to Community!) -->
-        <li class="project-card reveal scale" data-cat="community">
-          <div class="w">
-            <div class="f">
-              <img src="images/5indshow_mockup.png" alt="5IndShow" onerror="this.parentNode.innerHTML='<div class=\'project-img-placeholder\'><i class=\'fa-solid fa-film\'></i></div>'"/>
-              <span class="project-tag tag-community">Community</span>
-              <div class="project-card-info">
-                <h4 class="project-title">5IndShow</h4>
-                <p class="project-desc">Movie and series discovery platform with deep-link indexing.</p>
-              </div>
-            </div>
-            <div class="b">
-              <h4 class="overlay-title">5IndShow</h4>
-              <p class="overlay-desc">Movie and series discovery platform with deep-link indexing algorithms and sleek catalog exploration layouts.</p>
-              <div class="tech-stack-row">
-                <span class="tech-tag">HTML5 / CSS3</span>
-                <span class="tech-tag">TMDB API</span>
-              </div>
-              <div class="project-links">
-                <a href="https://5ind-show.vercel.app" target="_blank" class="project-link">Open App <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                <button class="project-link demo-btn" data-demo-id="5indshow">Watch Demo <i class="fa-solid fa-play"></i></button>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        <!-- LetsCook -->
-        <li class="project-card reveal scale in-dev" data-cat="community">
-          <div class="w">
-            <div class="f">
-              <div class="dev-ribbon">In Dev</div>
-              <img src="images/letscook_mockup.png" alt="LetsCook" onerror="this.parentNode.innerHTML='<div class=\'project-img-placeholder\'><i class=\'fa-solid fa-utensils\'></i></div>'"/>
-              <span class="project-tag tag-indev">In Development</span>
-              <div class="project-card-info">
-                <h4 class="project-title">LetsCook</h4>
-                <p class="project-desc">Interactive recipe explorer and portion scale dashboard.</p>
-              </div>
-            </div>
-            <div class="b">
-              <h4 class="overlay-title">LetsCook</h4>
-              <p class="overlay-desc">Interactive recipe discovery and kitchen measurement converter dashboard with custom ingredient card filters.</p>
-              <div class="tech-stack-row">
-                <span class="tech-tag">ES6 JS</span>
-                <span class="tech-tag">MealDB API</span>
-              </div>
-              <div class="dev-notice"><i class="fa-solid fa-gear"></i> Actively being built — launching soon</div>
-            </div>
-          </div>
-        </li>
-
-        <!-- UniGames -->
-        <li class="project-card reveal scale in-dev" data-cat="community">
-          <div class="w">
-            <div class="f">
-              <div class="dev-ribbon">In Dev</div>
-              <img src="images/unigames_mockup.png" alt="UniGames" onerror="this.parentNode.innerHTML='<div class=\'project-img-placeholder\'><i class=\'fa-solid fa-gamepad\'></i></div>'"/>
-              <span class="project-tag tag-indev">In Development</span>
-              <div class="project-card-info">
-                <h4 class="project-title">UniGames</h4>
-                <p class="project-desc">Social web portal featuring 50+ modular lightweight mini-games.</p>
-              </div>
-            </div>
-            <div class="b">
-              <h4 class="overlay-title">UniGames</h4>
-              <p class="overlay-desc">Social web portal featuring 50+ lightweight modular mini-games built in canvas, designed for swift latency-free runs on mobile.</p>
-              <div class="tech-stack-row">
-                <span class="tech-tag">Canvas JS</span>
-                <span class="tech-tag">WebSocket</span>
-              </div>
-              <div class="dev-notice"><i class="fa-solid fa-gear"></i> Actively being built — launching soon</div>
-            </div>
-          </div>
-        </li>
-
-        <!-- OnePunch -->
-        <li class="project-card reveal scale in-dev" data-cat="community">
-          <div class="w">
-            <div class="f">
-              <div class="dev-ribbon">In Dev</div>
-              <img src="images/onepunch_mockup.png" alt="OnePunch Fall" onerror="this.parentNode.innerHTML='<div class=\'project-img-placeholder\'><i class=\'fa-solid fa-fist-raised\'></i></div>'"/>
-              <span class="project-tag tag-indev">In Development</span>
-              <div class="project-card-info">
-                <h4 class="project-title">OnePunch Fall</h4>
-                <p class="project-desc">High-octane 3D Unity mobile game, optimized for portability.</p>
-              </div>
-            </div>
-            <div class="b">
-              <h4 class="overlay-title">OnePunch Fall</h4>
-              <p class="overlay-desc">High-octane 3D Unity mobile runner game, optimized for lightweight texture loads and seamless physics on lower-spec hardware.</p>
-              <div class="tech-stack-row">
-                <span class="tech-tag">Unity 3D</span>
-                <span class="tech-tag">C# Script</span>
-              </div>
-              <div class="dev-notice"><i class="fa-solid fa-gear"></i> Actively being built — launching soon</div>
-            </div>
-          </div>
-        </li>
-
-        <!-- RephraseBee -->
-        <li class="project-card reveal scale in-dev" data-cat="community">
-          <div class="w">
-            <div class="f">
-              <div class="dev-ribbon">In Dev</div>
-              <img src="images/rephrasebee_mockup.png" alt="RephraseBee" onerror="this.parentNode.innerHTML='<div class=\'project-img-placeholder\'><i class=\'fa-solid fa-brain\'></i></div>'"/>
-              <span class="project-tag tag-indev">In Development</span>
-              <div class="project-card-info">
-                <h4 class="project-title">RephraseBee</h4>
-                <p class="project-desc">AI sentence copywriting interface with lightning fast responses.</p>
-              </div>
-            </div>
-            <div class="b">
-              <h4 class="overlay-title">RephraseBee</h4>
-              <p class="overlay-desc">AI sentence and document rephrasing interface backed by lightning-fast API responses and custom formatting metrics.</p>
-              <div class="tech-stack-row">
-                <span class="tech-tag">HuggingFace</span>
-                <span class="tech-tag">RegEx Parse</span>
-              </div>
-              <div class="dev-notice"><i class="fa-solid fa-gear"></i> Actively being built — launching soon</div>
-            </div>
-          </div>
-        </li>
-
-        <!-- BeeFile -->
-        <li class="project-card reveal scale in-dev" data-cat="community">
-          <div class="w">
-            <div class="f">
-              <div class="dev-ribbon">In Dev</div>
-              <img src="images/beefile_mockup.png" alt="BeeFile" onerror="this.parentNode.innerHTML='<div class=\'project-img-placeholder\'><i class=\'fa-solid fa-file-pdf\'></i></div>'"/>
-              <span class="project-tag tag-indev">In Development</span>
-              <div class="project-card-info">
-                <h4 class="project-title">BeeFile</h4>
-                <p class="project-desc">Client-side offline PDF manipulation suite using WebAssembly.</p>
-              </div>
-            </div>
-            <div class="b">
-              <h4 class="overlay-title">BeeFile</h4>
-              <p class="overlay-desc">High-speed client-side PDF manipulation toolkit — merge, split, convert, and compress files entirely offline.</p>
-              <div class="tech-stack-row">
-                <span class="tech-tag">PDFLib JS</span>
-                <span class="tech-tag">WASM Core</span>
-              </div>
-              <div class="dev-notice"><i class="fa-solid fa-gear"></i> Actively being built — launching soon</div>
-            </div>
-          </div>
-        </li>
-
-        <!-- HiveMind -->
-        <li class="project-card reveal scale in-dev" data-cat="community">
-          <div class="w">
-            <div class="f">
-              <div class="dev-ribbon">In Dev</div>
-              <img src="images/hivemind_mockup.png" alt="HiveMind" onerror="this.parentNode.innerHTML='<div class=\'project-img-placeholder\'><i class=\'fa-solid fa-network-wired\'></i></div>'"/>
-              <span class="project-tag tag-indev">In Development</span>
-              <div class="project-card-info">
-                <h4 class="project-title">HiveMind</h4>
-                <p class="project-desc">Decentralized multi-AI agent consensus answer dashboard.</p>
-              </div>
-            </div>
-            <div class="b">
-              <h4 class="overlay-title">HiveMind</h4>
-              <p class="overlay-desc">Decentralized multi-AI agent consensus dashboard querying and mapping answer profiles across models concurrently.</p>
-              <div class="tech-stack-row">
-                <span class="tech-tag">AI Swarms</span>
-                <span class="tech-tag">JSON Schema</span>
-              </div>
-              <div class="dev-notice"><i class="fa-solid fa-gear"></i> Actively being built — launching soon</div>
-            </div>
-          </div>
-        </li>
-
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="wrap">
+      <a href="#top" class="brand" aria-label="TRNT BEE home"><i class="bee"></i>TRNT<b>BEE</b></a>
+      <ul class="nav-links">
+        <li><a href="#divisions">Divisions</a></li>
+        <li><a href="#technologies">R&amp;D</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#merch">Merch</a></li>
+        <li><a href="#society">Society</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a href="shop.html" class="nav-cta hide-sm">Shop <span class="count" data-cart-count>0</span></a>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+      </div>
     </div>
-  </section>
+  </header>
+  <nav class="mobile-menu" id="mobile-menu">
+    <a href="#technologies">R&amp;D <small>01</small></a>
+    <a href="#solutions">Solutions <small>02</small></a>
+    <a href="#merch">Merch <small>03</small></a>
+    <a href="#society">Society <small>04</small></a>
+    <a href="#contact">Contact <small>05</small></a>
+    <a href="shop.html" style="color:var(--honey)">Shop <small>→</small></a>
+  </nav>
 
-  <!-- ==================== RESEARCH & PATENTS ==================== -->
-  <section class="projects-section section" id="research" data-step="04" data-story="Research Lab" style="border-top: 1px solid var(--g4); padding-top: 120px;">
-    <div class="container">
-      <div class="projects-header">
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <canvas id="hive-canvas"></canvas>
+      <div class="hero-content wrap">
+        <div class="hero-eyebrow mono"><i></i> Student-led software studio · Est. 2025</div>
+        <h1 class="hero-title" id="hero-title">
+          <span class="word">TRNT</span>
+          <span class="word honey">BEE</span>
+        </h1>
+        <div class="hero-bottom">
+          <p class="hero-tag" data-hero>One hive. <em>Four divisions.</em> Research, products, merch and a community that builds together.</p>
+          <p class="hero-desc" data-hero>We research hard problems, ship real software, and grow the next generation of builders through BEE SOCIETY.</p>
+          <div class="scroll-cue mono" data-hero><span></span>Scroll</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-item"><span>Technologies</span><i class="bee"></i></div>
+        <div class="marquee-item"><span>Digital Solutions</span><i class="bee"></i></div>
+        <div class="marquee-item"><span>Merchandise</span><i class="bee"></i></div>
+        <div class="marquee-item"><span>Bee Society</span><i class="bee"></i></div>
+        <div class="marquee-item"><span>Technologies</span><i class="bee"></i></div>
+        <div class="marquee-item"><span>Digital Solutions</span><i class="bee"></i></div>
+        <div class="marquee-item"><span>Merchandise</span><i class="bee"></i></div>
+        <div class="marquee-item"><span>Bee Society</span><i class="bee"></i></div>
+      </div>
+    </div>
+
+    <!-- MANIFESTO -->
+    <section class="section manifesto">
+      <div class="wrap">
+        <div class="sec-index mono" style="margin-bottom:34px"><b>00</b> The hive</div>
+        <p id="manifesto-text">Started in our first year of college, TRNT BEE is a studio that treats software like a hive. Every cell has a job: |research| that pushes the edge, |products| people actually use, |merch| that carries the mark, and a |society| of builders who make it all possible.</p>
+        <div class="manifesto-meta">
+          <div class="stat"><b data-count="4">0</b><span class="mono">Divisions</span></div>
+          <div class="stat"><b data-count="3">0</b><span class="mono">R&amp;D programs</span></div>
+          <div class="stat"><b data-count="12" data-suffix="+">0</b><span class="mono">Products built</span></div>
+          <div class="stat"><b data-count="2">0</b><span class="mono">Patents in progress</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVISIONS -->
+    <section class="section" id="divisions" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-index mono"><b>Index</b>Four divisions</div>
+          <div>
+            <h2 class="sec-title" data-split>The hive, <em>in four cells.</em></h2>
+          </div>
+        </div>
+        <ul class="divisions">
+          <li class="division" data-reveal><a href="#technologies" data-cursor="OPEN">
+            <span class="num">01</span>
+            <h3><small>TRNT BEE</small>Technologies</h3>
+            <p class="d-desc">Research &amp; development. Flood modelling, AI security and certified LLM orchestration.</p>
+            <span class="d-arrow"><i class="fa-solid fa-arrow-right"></i></span></a></li>
+          <li class="division" data-reveal><a href="#solutions" data-cursor="OPEN">
+            <span class="num">02</span>
+            <h3><small>TRNT BEE</small>Digital Solutions</h3>
+            <p class="d-desc">Apps, platforms and games we design, build and ship for real users.</p>
+            <span class="d-arrow"><i class="fa-solid fa-arrow-right"></i></span></a></li>
+          <li class="division" data-reveal><a href="#merch" data-cursor="OPEN">
+            <span class="num">03</span>
+            <h3><small>TRNT BEE</small>Merchandise</h3>
+            <p class="d-desc">Wear the hive. Limited drops, designed in-house.</p>
+            <span class="d-arrow"><i class="fa-solid fa-arrow-right"></i></span></a></li>
+          <li class="division" data-reveal><a href="#society" data-cursor="OPEN">
+            <span class="num">04</span>
+            <h3><small>TRNT BEE</small>Bee Society</h3>
+            <p class="d-desc">A college community of builders who explore new stacks and ship projects together.</p>
+            <span class="d-arrow"><i class="fa-solid fa-arrow-right"></i></span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 01 TECHNOLOGIES -->
+    <section class="section rnd" id="technologies">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-index mono"><b>01</b>Technologies · R&amp;D</div>
+          <div>
+            <h2 class="sec-title" data-split>Research at <em>the edge.</em></h2>
+            <p class="sec-sub" data-reveal>Three programs we're working on right now. Long-horizon problems where a better answer actually matters.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rnd-pin" id="rnd-pin">
+        <div class="rnd-track" id="rnd-track"></div>
+        <div class="rnd-progress"><i id="rnd-bar"></i></div>
+      </div>
+    </section>
+
+    <!-- 02 SOLUTIONS -->
+    <section class="section" id="solutions">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-index mono"><b>02</b>Digital Solutions</div>
+          <div>
+            <h2 class="sec-title" data-split>Things we've <em>shipped.</em></h2>
+            <p class="sec-sub" data-reveal>From hackathon builds to a live college ERP and a 3D game. More are coming soon.</p>
+          </div>
+        </div>
+        <div class="featured" id="featured"></div>
+        <div class="sol-toolbar">
+          <h3>The full catalogue</h3>
+          <div class="filters" id="filters">
+            <button class="is-on" data-f="all">All</button>
+            <button data-f="live">Live</button>
+            <button data-f="dev">In development</button>
+          </div>
+        </div>
+        <div class="grid" id="sol-grid"></div>
+      </div>
+    </section>
+
+    <!-- 03 MERCH -->
+    <section class="section" id="merch" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-index mono"><b>03</b>Merchandise</div>
+          <div>
+            <h2 class="sec-title" data-split>Wear <em>the hive.</em></h2>
+          </div>
+        </div>
+        <div class="merch-wrap">
+          <div class="merch-intro" data-reveal>
+            <h3>Limited drops, designed in-house by the people building TRNT BEE.</h3>
+            <div>
+              <p class="dim" style="margin-bottom:24px">First drop lands soon. Get on the list in the shop and you'll hear before anyone else.</p>
+              <a href="shop.html" class="btn btn-solid">Enter the shop <i class="fa-solid fa-arrow-right arrow"></i></a>
+            </div>
+          </div>
+          <div id="merch-teaser" style="display:contents"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 SOCIETY -->
+    <section class="section society" id="society">
+      <div class="society-media"><video src="images/society.mp4" muted loop playsinline autoplay preload="metadata"></video></div>
+      <div class="society-inner wrap">
+        <div class="sec-index mono" style="margin-bottom:28px"><b>04</b>Bee Society</div>
+        <h2 class="society-big"><span class="split-line"><span>BEE</span></span><span class="split-line"><span class="outline">SOCIETY</span></span></h2>
+        <div class="society-grid">
+          <p data-reveal><strong>BEE SOCIETY is where TRNT BEE starts.</strong> A college community of builders who explore new tech stacks, prototype together and work on real projects with us. Ideas get proposed, voted on and built in open sessions, and the best ones become products.</p>
+          <div data-reveal>
+            <ul class="pillars">
+              <li><span>01</span><div><b>Ideate in swarm</b><div class="dim">Open sessions where members propose, vote and prototype fast.</div></div></li>
+              <li><span>02</span><div><b>Fork &amp; build</b><div class="dim">Small teams own a module and ship it on their own stack.</div></div></li>
+              <li><span>03</span><div><b>Launch together</b><div class="dim">Real users, real feedback, and your name on the product.</div></div></li>
+            </ul>
+            <div class="join">
+              <a class="btn btn-solid" href="https://chat.whatsapp.com/KTangyVdEt9AZdgoTCUPyY" target="_blank" rel="noopener">Join the swarm <i class="fa-brands fa-whatsapp arrow"></i></a>
+              <a class="btn" href="https://www.instagram.com/beesociety101" target="_blank" rel="noopener">Instagram <i class="fa-solid fa-arrow-right arrow"></i></a>
+              <a class="btn" href="https://discord.gg/wmfEVHTS" target="_blank" rel="noopener">Discord <i class="fa-solid fa-arrow-right arrow"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="wrap contact-grid">
+        <div class="founder" data-reveal>
+          <img src="images/founder.webp" alt="Varshith, founder of TRNT BEE" loading="lazy" />
+          <div class="founder-cap">
+            <div><b>Varshith</b><span>Founder &amp; Lead Architect</span></div>
+            <i class="bee" style="font-size:30px;color:var(--honey)"></i>
+          </div>
+        </div>
         <div>
-          <div class="section-label reveal up">Intellectual Swarm Node</div>
-          <h2 class="section-title reveal up">Research &amp; <em>Patents</em>.</h2>
-          <p class="section-sub reveal up">Academic publications, whitepapers, and proprietary swarm protocols engineered by TRNTBEE.</p>
-        </div>
-        <div class="projects-tabs" id="research-tabs">
-          <button class="tab-btn active" data-filter="all">All</button>
-          <button class="tab-btn" data-filter="patent">Patents</button>
-          <button class="tab-btn" data-filter="paper">Papers</button>
-        </div>
-      </div>
-      
-      <!-- Upgraded 3D Direction Aware Rotating Boxes Swarm -->
-      <ul class="projects-grid stagger" id="research-grid">
- 
-        <!-- Trek Vana IoT Design Patent -->
-        <li class="project-card reveal scale" data-cat="patent">
-          <div class="w">
-            <div class="f">
-              <div class="project-img-placeholder"><i class="fa-solid fa-mountain-sun" style="color:var(--y1); font-size:48px;"></i></div>
-              <span class="project-tag tag-patent">Patent Pending</span>
-              <div class="project-card-info">
-                <h4 class="project-title">Trek Vana — IoT Trail Design System</h4>
-                <p class="project-desc">Disclosed. A smart IoT-integrated design framework for trail bookings and real-time outdoor itinerary management.</p>
-              </div>
-            </div>
-            <div class="b">
-              <h4 class="overlay-title">Trek Vana IoT Design</h4>
-              <p class="overlay-desc">A disclosed innovation covering IoT-sensor-driven trail navigation and smart booking integration for the TrekVana platform. Patent application filed and currently in process with the IP office. Full specification under review.</p>
-              <div class="tech-stack-row">
-                <span class="tech-tag">IoT Sensors</span>
-                <span class="tech-tag">Trail Navigation</span>
-                <span class="tech-tag"><i class="fa-solid fa-lock" style="font-size:10px;margin-right:4px;"></i> Disclosed · In Process</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link">View Disclosure <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        <!-- Thrufter System Patent -->
-        <li class="project-card reveal scale" data-cat="patent">
-          <div class="w">
-            <div class="f">
-              <div class="project-img-placeholder"><i class="fa-solid fa-shield-halved" style="color:var(--y1); font-size:48px;"></i></div>
-              <span class="project-tag tag-patent">Patent Pending</span>
-              <div class="project-card-info">
-                <h4 class="project-title">Thrufter System — Vulnerability Checker</h4>
-                <p class="project-desc">A secured, automated vulnerability detection and penetration-reporting system. Patent filing in progress.</p>
-              </div>
-            </div>
-            <div class="b">
-              <h4 class="overlay-title">Thrufter System</h4>
-              <p class="overlay-desc">Thrufter is a proprietary secured vulnerability checker designed to automate threat detection, penetration surface mapping, and security audit reporting. Patent application currently in progress — architecture and core algorithms under IP protection.</p>
-              <div class="tech-stack-row">
-                <span class="tech-tag">Cybersecurity</span>
-                <span class="tech-tag">Pen Testing</span>
-                <span class="tech-tag"><i class="fa-solid fa-gear" style="font-size:10px;margin-right:4px;"></i> In Progress</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link">View Disclosure <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        <!-- Canvas Sync -->
-        <li class="project-card reveal scale" data-cat="paper">
-          <div class="w">
-            <div class="f">
-              <div class="project-img-placeholder"><i class="fa-solid fa-gauge-high" style="color:var(--y1); font-size:48px;"></i></div>
-              <span class="project-tag tag-paper">Research Paper</span>
-              <div class="project-card-info">
-                <h4 class="project-title">60fps Canvas Sync Protocol</h4>
-                <p class="project-desc">Sub-millisecond latency frame rendering and state synchronization protocol for browser game hubs.</p>
-              </div>
-            </div>
-            <div class="b">
-              <h4 class="overlay-title">Canvas Sync Protocol</h4>
-              <p class="overlay-desc">A research publication detailing our sub-millisecond state synchronization across client browsers over WebSocket channels for real-time game hubs.</p>
-              <div class="tech-stack-row">
-                <span class="tech-tag">WebSocket Syncer</span>
-                <span class="tech-tag">Research</span>
-                <span class="tech-tag">Graphics Engine</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link">Read Paper <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        <!-- Thrufter System Research Paper -->
-        <li class="project-card reveal scale" data-cat="paper">
-          <div class="w">
-            <div class="f">
-              <div class="project-img-placeholder"><i class="fa-solid fa-bug-slash" style="color:var(--y1); font-size:48px;"></i></div>
-              <span class="project-tag tag-paper">Research Paper</span>
-              <div class="project-card-info">
-                <h4 class="project-title">Thrufter — Automated Vulnerability Analysis</h4>
-                <p class="project-desc">Research paper on automated penetration surface mapping and secured vulnerability detection pipelines. In progress.</p>
-              </div>
-            </div>
-            <div class="b">
-              <h4 class="overlay-title">Thrufter Research</h4>
-              <p class="overlay-desc">An ongoing research paper documenting the architecture, methodology, and detection benchmarks of the Thrufter vulnerability checking system. Covers automated threat modeling, surface analysis, and audit report generation. Currently in progress — expected submission pending patent clearance.</p>
-              <div class="tech-stack-row">
-                <span class="tech-tag">Security Research</span>
-                <span class="tech-tag">Vulnerability Mapping</span>
-                <span class="tech-tag"><i class="fa-solid fa-file-pen" style="font-size:10px;margin-right:4px;"></i> In Progress</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link">Coming Soon <i class="fa-solid fa-clock"></i></a>
-              </div>
-            </div>
-          </div>
-        </li>
-
-      </ul>
-    </div>
-  </section>
-
-  <!-- ==================== SERVICES ==================== -->
-  <section class="services-section section" id="services" data-step="05" data-story="Core Divisions">
-    <div class="container">
-      <div class="section-label reveal up">Expertise</div>
-      <h2 class="section-title reveal up">Core Tech <em>Divisions</em>.</h2>
-      <p class="section-sub reveal up">How we classify our software engineering and product operations inside our swarms.</p>
-      <div class="services-grid stagger">
-        <div class="service-card">
-          <div class="service-num">01</div>
-          <div class="service-icon"><i class="fa-solid fa-code"></i></div>
-          <div class="service-title">Web Engineering</div>
-          <p class="service-desc">Crafting elite responsive interfaces and serverless backend layers utilizing fast-sync NextJS and lightweight ES6 engines.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-num">02</div>
-          <div class="service-icon"><i class="fa-solid fa-gamepad"></i></div>
-          <div class="service-title">Game R&amp;D</div>
-          <p class="service-desc">Developing low-latency 2D canvas hubs and rich 3D Unity assets optimized for portable mobile devices and smooth physics.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-num">03</div>
-          <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
-          <div class="service-title">AI System Integrations</div>
-          <p class="service-desc">Coordinating multi-agent parser algorithms, local document vector stores, and automated prompt rephrasing models.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-num">04</div>
-          <div class="service-icon"><i class="fa-solid fa-gauge-high"></i></div>
-          <div class="service-title">Lag-Free Optimization</div>
-          <p class="service-desc">Stripping bulky framework overrides to guarantee completely fluid 60fps renders on low-spec client browsers everywhere.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== METRICS ==================== -->
-  <section class="metrics-section section" data-step="06" data-story="Ecosystem Pulse">
-    <div class="container">
-      <div class="metrics-grid stagger">
-        <div class="metric-item">
-          <span class="metric-val" id="m1" data-target="150">0</span>
-          <span class="metric-label">Active Swarm Members</span>
-        </div>
-        <div class="metric-item">
-          <span class="metric-val" id="m2" data-target="3">0</span>
-          <span class="metric-label">Web Projects Launched</span>
-        </div>
-        <div class="metric-item">
-          <span class="metric-val" id="m3" data-target="99">0</span>
-          <span class="metric-label">Performance Rating</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== TESTIMONIALS ==================== -->
-  <section class="testimonials-section section" id="testimonials" data-step="07" data-story="Social Proof">
-    <div class="container">
-      <div class="section-label reveal up">Feedback</div>
-      <h2 class="section-title reveal up">Ecosystem <em>Reviews</em>.</h2>
-      <p class="section-sub reveal up">Real reviews from platform users, collaborators, and structural advisors.</p>
-      <div class="testimonials-marquee-wrapper">
-        <!-- Row 1: Leftward Marquee Track (Rohan, Richards, Ishita, Sarah, Aditya) -->
-        <div class="testimonials-marquee-row">
-          <div class="testimonials-marquee-track track-left">
-            <!-- Card 1 -->
-            <div class="testimonial-card">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">BeePrepare sach me kamaal hai! Renders papers in seconds. Bhot time bachta hai.</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">R</div>
-                <div>
-                  <div class="author-name">Rohan Sharma</div>
-                  <div class="author-role">SaaS Developer</div>
-                </div>
-              </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="testimonial-card">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">TRNTBEE is a massive paradigm shift. Elite tech built by college freshmen.</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">R</div>
-                <div>
-                  <div class="author-name">Richards Johnson</div>
-                  <div class="author-role">Advising Engineering Director</div>
-                </div>
-              </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="testimonial-card">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">Super clean UI and zero-bloat codebase. TrekVana is exceptionally premium.</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">I</div>
-                <div>
-                  <div class="author-name">Ishita Patel</div>
-                  <div class="author-role">UI Designer</div>
-                </div>
-              </div>
-            </div>
-            <!-- Card 4 -->
-            <div class="testimonial-card">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">Offline PDF manipulations are so smooth, literally ek click me sab ho jata hai!</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">S</div>
-                <div>
-                  <div class="author-name">Sarah Jenkins</div>
-                  <div class="author-role">Beta Tester</div>
-                </div>
-              </div>
-            </div>
-            <!-- Card 5 -->
-            <div class="testimonial-card">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">Learnt WebAssembly &amp; WebSockets here. We build fast and scale instantly.</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">A</div>
-                <div>
-                  <div class="author-name">Aditya Nair</div>
-                  <div class="author-role">BEE Swarm Member</div>
-                </div>
-              </div>
-            </div>
-            <!-- Duplicate Card 1 -->
-            <div class="testimonial-card" aria-hidden="true">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">BeePrepare sach me kamaal hai! Renders papers in seconds. Bhot time bachta hai.</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">R</div>
-                <div>
-                  <div class="author-name">Rohan Sharma</div>
-                  <div class="author-role">SaaS Developer</div>
-                </div>
-              </div>
-            </div>
-            <!-- Duplicate Card 2 -->
-            <div class="testimonial-card" aria-hidden="true">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">TRNTBEE is a massive paradigm shift. Elite tech built by college freshmen.</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">R</div>
-                <div>
-                  <div class="author-name">Richards Johnson</div>
-                  <div class="author-role">Advising Engineering Director</div>
-                </div>
-              </div>
-            </div>
-            <!-- Duplicate Card 3 -->
-            <div class="testimonial-card" aria-hidden="true">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">Super clean UI and zero-bloat codebase. TrekVana is exceptionally premium.</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">I</div>
-                <div>
-                  <div class="author-name">Ishita Patel</div>
-                  <div class="author-role">UI Designer</div>
-                </div>
-              </div>
-            </div>
-            <!-- Duplicate Card 4 -->
-            <div class="testimonial-card" aria-hidden="true">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">Offline PDF manipulations are so smooth, literally ek click me sab ho jata hai!</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">S</div>
-                <div>
-                  <div class="author-name">Sarah Jenkins</div>
-                  <div class="author-role">Beta Tester</div>
-                </div>
-              </div>
-            </div>
-            <!-- Duplicate Card 5 -->
-            <div class="testimonial-card" aria-hidden="true">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">Learnt WebAssembly &amp; WebSockets here. We build fast and scale instantly.</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">A</div>
-                <div>
-                  <div class="author-name">Aditya Nair</div>
-                  <div class="author-role">BEE Swarm Member</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row 2: Rightward Marquee Track (Jona, Vikram, Sofia, Priya) -->
-        <div class="testimonials-marquee-row">
-          <div class="testimonials-marquee-track track-right">
-            <!-- Card 6 -->
-            <div class="testimonial-card">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">The sub-millisecond sync protocol is brilliant. Absolute 60fps performance.</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">J</div>
-                <div>
-                  <div class="author-name">Jona Carter</div>
-                  <div class="author-role">Tech Collaborator</div>
-                </div>
-              </div>
-            </div>
-            <!-- Card 7 -->
-            <div class="testimonial-card">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">TrekVana design is pure gold. Mobile experience bilkul buttery smooth hai!</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">V</div>
-                <div>
-                  <div class="author-name">Vikram Malhotra</div>
-                  <div class="author-role">Product Lead</div>
-                </div>
-              </div>
-            </div>
-            <!-- Card 8 -->
-            <div class="testimonial-card">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">Low-overhead architecture that solves real problems. Highly impressed.</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">S</div>
-                <div>
-                  <div class="author-name">Sofia Toms</div>
-                  <div class="author-role">Lead Product Advisor</div>
-                </div>
-              </div>
-            </div>
-            <!-- Card 9 -->
-            <div class="testimonial-card">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">Physics tests compile instantly. Humare department ka kaam bhot aasan ho gaya.</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">P</div>
-                <div>
-                  <div class="author-name">Priya Gupta</div>
-                  <div class="author-role">High-School Educator</div>
-                </div>
-              </div>
-            </div>
-            <!-- Duplicate Card 6 -->
-            <div class="testimonial-card" aria-hidden="true">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">The sub-millisecond sync protocol is brilliant. Absolute 60fps performance.</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">J</div>
-                <div>
-                  <div class="author-name">Jona Carter</div>
-                  <div class="author-role">Tech Collaborator</div>
-                </div>
-              </div>
-            </div>
-            <!-- Duplicate Card 7 -->
-            <div class="testimonial-card" aria-hidden="true">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">TrekVana design is pure gold. Mobile experience bilkul buttery smooth hai!</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">V</div>
-                <div>
-                  <div class="author-name">Vikram Malhotra</div>
-                  <div class="author-role">Product Lead</div>
-                </div>
-              </div>
-            </div>
-            <!-- Duplicate Card 8 -->
-            <div class="testimonial-card" aria-hidden="true">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">Low-overhead architecture that solves real problems. Highly impressed.</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">S</div>
-                <div>
-                  <div class="author-name">Sofia Toms</div>
-                  <div class="author-role">Lead Product Advisor</div>
-                </div>
-              </div>
-            </div>
-            <!-- Duplicate Card 9 -->
-            <div class="testimonial-card" aria-hidden="true">
-              <span class="quote-mark">"</span>
-              <p class="testimonial-text">Physics tests compile instantly. Humare department ka kaam bhot aasan ho gaya.</p>
-              <div class="testimonial-author">
-                <div class="author-avatar">P</div>
-                <div>
-                  <div class="author-name">Priya Gupta</div>
-                  <div class="author-role">High-School Educator</div>
-                </div>
-              </div>
-            </div>
+          <div class="sec-index mono" style="margin-bottom:24px"><b>05</b>Contact</div>
+          <h2 class="contact-title" data-split>Have something <em>worth building?</em></h2>
+          <a class="mail-big" href="mailto:ravindarraodevarneni@gmail.com" data-cursor="MAIL">ravindarraodevarneni@gmail.com</a>
+          <div class="socials">
+            <a class="social" href="https://github.com/varshithrao101" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a class="social" href="https://www.instagram.com/vars.101" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a class="social" href="https://youtube.com/@beesociety-d6y" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a class="social" href="https://discord.gg/wmfEVHTS" target="_blank" rel="noopener" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+            <a class="social" href="mailto:beesociety101@gmail.com" aria-label="BEE SOCIETY email"><i class="fa-solid fa-envelope"></i></a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- ==================== FAQ ==================== -->
-  <section class="faq-section section" id="faq" data-step="08" data-story="Clarity Layer">
-    <div class="container">
-      <div class="faq-grid">
-        <div class="faq-intro reveal left">
-          <div class="section-label">Answers</div>
-          <h2 class="section-title">Common <em>Questions</em>.</h2>
-          <p>Find answers to common questions about TRNTBEE projects and the BEE SOCIETY swarm.</p>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <a href="#top" class="brand"><i class="bee"></i>TRNT<b>BEE</b></a>
+          <p class="dim" style="max-width:340px;margin-top:14px">A student-led software studio. Research, products, merch and community.</p>
         </div>
-        <div class="faq-list reveal right">
-          <div class="accordion-item open">
-            <button class="accordion-trigger">
-              <span>What is the difference between TRNTBEE and BEE SOCIETY?</span>
-              <div class="icon"><i class="fa-solid fa-plus"></i></div>
-            </button>
-            <div class="accordion-content">
-              TRNTBEE is our core technology company focused on launching and licensing high-performance revenue-generating software. BEE SOCIETY is our open-source student collaborative swarm where developers experiment with tech stacks and build open projects together.
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-trigger">
-              <span>Is BeePrepare active and ready for use?</span>
-              <div class="icon"><i class="fa-solid fa-plus"></i></div>
-            </button>
-            <div class="accordion-content">
-              Yes. BeePrepare is one of our primary revenue platforms, allowing schools and educators to quickly compile, format, and render custom examination papers offline using fast local scripting structures.
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-trigger">
-              <span>What tech stacks do you explore?</span>
-              <div class="icon"><i class="fa-solid fa-plus"></i></div>
-            </button>
-            <div class="accordion-content">
-              We work across diverse ecosystems: serverless NextJS, WebAssembly, WebRTC nodes, PDFLib processing, Unity 3D, and decentralized multi-AI neural network APIs.
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-trigger">
-              <span>How do I join the BEE SOCIETY swarm?</span>
-              <div class="icon"><i class="fa-solid fa-plus"></i></div>
-            </button>
-            <div class="accordion-content">
-              Submit your coordinates via the contact form or reach out via email. We coordinate weekly open engineering hackathons and open-source project review sessions.
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-trigger">
-              <span>Do you provide custom B2B software engineering?</span>
-              <div class="icon"><i class="fa-solid fa-plus"></i></div>
-            </button>
-            <div class="accordion-content">
-              Yes. While we focus on building our own products, we periodically architect high-performance custom enterprise web solutions and rapid dashboard integrations for commercial partners.
-            </div>
-          </div>
-        </div>
+        <div><h5>Divisions</h5><ul>
+          <li><a href="#technologies">Technologies</a></li><li><a href="#solutions">Digital Solutions</a></li>
+          <li><a href="#merch">Merchandise</a></li><li><a href="#society">Bee Society</a></li></ul></div>
+        <div><h5>Shop</h5><ul><li><a href="shop.html">All products</a></li><li><a href="shop.html#notify">Drop alerts</a></li></ul></div>
+        <div><h5>Social</h5><ul>
+          <li><a href="https://www.instagram.com/beesociety101" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://youtube.com/@beesociety-d6y" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://github.com/varshithrao101" target="_blank" rel="noopener">GitHub</a></li></ul></div>
       </div>
-    </div>
-  </section>
-
-  <section class="launch-strip section" id="launch-strip" data-step="09" data-story="Launch Window">
-    <div class="container">
-      <div class="launch-strip-card reveal scale">
-        <div class="launch-strip-copy">
-          <div class="section-label">Launch Ready</div>
-          <h2 class="launch-strip-title">Everything needed to start a serious launch conversation.</h2>
-          <p class="launch-strip-desc">Direct founder contact, current availability, and the strongest live product link in one premium strip.</p>
-        </div>
-        <div class="launch-strip-grid stagger">
-          <a id="launch-founder-link" href="mailto:ravindarraodevarneni@gmail.com" class="launch-pill launch-pill-primary">
-            <span class="launch-pill-label">Direct Founder Contact</span>
-            <strong id="launch-founder-name">Varshith</strong>
-            <span class="launch-pill-meta" id="launch-founder-email">ravindarraodevarneni@gmail.com</span>
-          </a>
-          <div class="launch-pill launch-pill-status">
-            <span class="launch-pill-label">Current Availability</span>
-            <strong>Selective Launch Partnerships</strong>
-            <span class="launch-pill-meta">Open to product launches, pilot rollouts, and focused founder conversations.</span>
-          </div>
-          <a id="launch-product-link" href="https://beeprepare.in" target="_blank" class="launch-pill launch-pill-product">
-            <span class="launch-pill-label">Strongest Live Product</span>
-            <strong id="launch-product-name">BeePrepare</strong>
-            <span class="launch-pill-meta">See the clearest live proof of TRNTBEE product quality.</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== HEROIC CTA & FOUNDER NODE ==================== -->
-  <section class="cta-section section" id="contact" data-step="10" data-story="Founder Contact">
-    <div class="container">
-      <div class="cta-inner reveal scale">
-        <div class="cta-grid">
-          
-          <!-- Left Node: Swarm Collaboration details -->
-          <div class="cta-collab-node">
-            <div class="section-label">Cooperate &amp; Build</div>
-            <h2 class="cta-title">Curious about what we can <em>build</em> together?</h2>
-            <p class="cta-desc">
-              Whether you are an ambitious student builder looking to master cutting-edge tech stacks in our open swarms, or a commercial partner seeking high-speed, lag-free revenue software, we coordinate seamless integrations.
-            </p>
-            <div class="cta-actions-row" id="cta-actions-row">
-              <a id="cta-instagram-link" href="https://www.instagram.com/beesociety101" target="_blank" class="btn-whatsapp-collab" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);">
-                <i class="fa-brands fa-instagram"></i> Follow BEE SOCIETY
-              </a>
-              <a id="cta-whatsapp-link" href="https://chat.whatsapp.com/KTangyVdEt9AZdgoTCUPyY" target="_blank" class="btn-whatsapp-join">
-                <i class="fa-brands fa-whatsapp"></i> Join WhatsApp Swarm
-              </a>
-              <a id="cta-email-link" href="mailto:beesociety101@gmail.com" class="cta-email-link">
-                <i class="fa-solid fa-envelope"></i> <span id="cta-email-text">beesociety101@gmail.com</span>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Right Node: Heroic Founder Node -->
-          <div class="cta-founder-node">
-            <!-- Founder Photo -->
-            <div class="founder-photo-container">
-              <div class="founder-photo-placeholder" style="padding:0;overflow:hidden;">
-                <img id="founder-photo" src="images/adminphoto.jpg" alt="Varshith" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" />
-              </div>
-              <span class="founder-badge">Swarm Founder</span>
-            </div>
-            
-            <!-- Founder Bio Details -->
-            <div class="founder-details">
-              <h3 class="founder-name" id="founder-name">Varshith</h3>
-              <p class="founder-title" id="founder-title">Swarm Founder &amp; Lead Architect</p>
-              <p class="founder-bio" id="founder-bio">
-                Architecting revenue-generating software products and coordinating the open collaborative swarms of BEE SOCIETY. Bridging college engineering swarms with scalable commercial deployment pipelines.
-              </p>
-            </div>
-            
-            <!-- Founder Social Connections -->
-            <div class="founder-socials" id="founder-socials">
-              <a href="https://github.com/varshithrao101" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-              <a href="https://www.instagram.com/vars.101" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-              <a href="mailto:ravindarraodevarneni@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== FOOTER ==================== -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <img src="images/logo.png" alt="TRNTBEE Logo" style="width: 28px; height: 28px; object-fit: contain;" />
-            TRNT<span>BEE</span>
-          </div>
-          <p class="footer-tagline">Building revenue-generating software products and collaborative open swarms in our first college semesters. Powered by the BEE SOCIETY.</p>
-        </div>
-        <div class="footer-social" id="footer-socials">
-          <a href="https://github.com/varshithrao101" target="_blank" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.instagram.com/vars.101" target="_blank" class="social-link" aria-label="Instagram (Personal)"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.instagram.com/beesociety101" target="_blank" class="social-link" aria-label="Instagram (BEE SOCIETY)"><i class="fa-solid fa-hexagon-nodes"></i></a>
-          <a href="https://youtube.com/@beesociety-d6y" target="_blank" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="https://discord.gg/wmfEVHTS" target="_blank" class="social-link" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
-          <a href="mailto:ravindarraodevarneni@gmail.com" class="social-link" aria-label="Personal Email"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 TRNTBEE Tech. All rights reserved.</span>
-        <span>Built with clean high-performance code.</span>
-      </div>
+      <div class="footer-word" id="footer-word">TRNT BEE</div>
+      <div class="footer-bottom"><span>© <span data-year></span> TRNT BEE. All rights reserved.</span><span class="mono">Built by the hive</span></div>
     </div>
   </footer>
 
-  <!-- ==================== DETAILS VIDEO MODAL ==================== -->
-  <div id="videoModal" class="modal">
-    <div id="videoModalBackdrop" class="modal-backdrop"></div>
-    <div class="modal-wrapper">
-      <div class="modal-panel">
-        <button id="closeVideoBtn" class="modal-close" aria-label="Close Modal">&times;</button>
-        <h3 id="videoTitle" class="modal-title">Project Details</h3>
-        <div class="case-study-visualizer">
-          <div class="viz-center">
-            <i id="vizIcon" class="fa-solid fa-code viz-center-icon"></i>
-          </div>
-        </div>
-        <p id="videoDesc" class="modal-desc">Detailed specification about the product.</p>
-        <div id="modalLinks" class="modal-links"></div>
-      </div>
-    </div>
-  </div>
-
-
-  <script src="sitedata.js"></script>
-  <script src="render.js"></script>
-  <script src="app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    } }
+  </script>
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/home.js"></script>
+  <script type="module" src="js/hive3d.js"></script>
 </body>
 </html>
