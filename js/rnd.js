@@ -150,7 +150,7 @@
       if (t > 360) reset();
       raf = requestAnimationFrame(loop);
     }
-    cv.addEventListener('pointerdown', e => {
+    cv.addEventListener('click', e => {
       const r = cv.getBoundingClientRect();
       const x = Math.round((e.clientX - r.left) / r.width * W), y = Math.round((e.clientY - r.top) / r.height * H);
       // the breach always sits on the river; tapping moves it up or downstream
@@ -218,14 +218,15 @@
     ];
     host.innerHTML = `<canvas></canvas>
       <div class="viz-hud">
-        <div><span>Avg. cost per question</span><b data-c>—</b></div>
-        <div><span>Large model every time</span><b>60.0</b></div>
+        <div><span>Avg. cost</span><b data-c>—</b></div>
+        <div><span>Big model only</span><b>60.0</b></div>
       </div>`;
     const cv = host.querySelector('canvas'), ctx = cv.getContext('2d');
     const counts = tiers.map(() => 0);
     let parts = [], spent = 0, answered = 0, running = false, raf = 0, last = 0, spawn = 0;
     function layout() {
-      const w = cv.width, h = cv.height, top = h * .2, rowH = (h * .77) / tiers.length;
+      const w = cv.width, h = cv.height, dprL = w / Math.max(1, cv.getBoundingClientRect().width);
+      const top = Math.max(h * .2, 78 * dprL), rowH = (h - top - h * .03) / tiers.length; // leave room for the readouts
       return { w, h, top, rowH, left: w * .06, right: w * .94 };
     }
     function add() {

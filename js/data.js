@@ -76,8 +76,15 @@ window.TB = {
     {
       id: 'voidfall', title: 'VoidFall', featured: true, status: 'dev', year: '2026',
       kicker: '3D endless runner',
-      desc: 'Run down a 38° hillside from daylight above the clouds into the dark. Built from scratch on Three.js with five rigged characters. Drag the model to spin it.',
-      url: '', model: 'images/projects/voidfall-flame.glb', image: 'images/projects/voidfall.webp'
+      desc: 'Run down a 38° hillside from daylight above the clouds into the dark. Built from scratch on Three.js. Meet all five playable characters with the arrows.',
+      url: '', image: 'images/projects/voidfall.webp',
+      characters: [
+        { id: 'shadow', name: 'Shadow Blade', color: '#9aa6c4', cost: 0, blurb: 'Teleport dash: phases forward through anything in the way.', file: 'images/projects/voidfall/shadow.glb' },
+        { id: 'flame', name: 'Flame Emperor', color: '#da752a', cost: 1500, blurb: 'Immolation: burns a path clean and ignores explosions.', file: 'images/projects/voidfall/flame.glb' },
+        { id: 'thunder', name: 'Thunder Rider', color: '#4663c2', cost: 4000, blurb: 'Overcharge: a huge speed burst and chain lightning.', file: 'images/projects/voidfall/thunder.glb' },
+        { id: 'frost', name: 'Frost Guardian', color: '#4f86b8', cost: 9000, blurb: 'Glacial halt: freezes the void, slowing everything but you.', file: 'images/projects/voidfall/frost.glb' },
+        { id: 'void', name: 'Void Walker', color: '#6b5a9c', cost: 20000, blurb: 'Phase shift: becomes untouchable and drinks the abyss.', file: 'images/projects/voidfall/void.glb' }
+      ]
     },
     { id: 'beeprepare', title: 'BeePrepare', status: 'live', kicker: 'EdTech', desc: 'Exam paper generator for teachers.', url: 'https://beeprepare.in', image: 'images/beeprepare_mockup.webp' },
     { id: '5indshow', title: '5IndShow', status: 'live', kicker: 'Entertainment', desc: 'Find where to watch any movie or series.', url: 'https://5ind-show.vercel.app', image: 'images/5indshow_mockup.webp' },

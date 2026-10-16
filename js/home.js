@@ -48,7 +48,17 @@
   $('#featured').innerHTML = D.solutions.filter(p => p.featured).map(p => {
     let media;
     if (p.art) media = zetaArt();
-    else if (p.model) media = `<img class="fallback" src="${esc(p.image)}" alt="${esc(p.title)} character" loading="lazy"><canvas id="voidfall-canvas" data-model="${esc(p.model)}"></canvas>`;
+    else if (p.characters) media = `<div class="vf-stage" id="vf-stage" tabindex="0" aria-label="VoidFall characters. Use the arrow keys to switch." data-chars='${esc(JSON.stringify(p.characters))}'>
+        <canvas></canvas>
+        <div class="vf-load"><i class="bee"></i></div>
+        <div class="vf-top"><span data-vf-count></span><span class="vf-hint">${'ontouchstart' in window ? 'Tap the arrows' : 'Drag to spin'}</span></div>
+        <div class="vf-bar">
+          <button class="vf-arrow" data-vf-prev aria-label="Previous character"><i class="fa-solid fa-arrow-left"></i></button>
+          <div class="vf-info"><b data-vf-name></b><span data-vf-blurb></span><em data-vf-cost></em></div>
+          <button class="vf-arrow" data-vf-next aria-label="Next character"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="vf-dots">${p.characters.map((c, k) => `<button data-vf-dot="${k}" aria-label="${esc(c.name)}" style="--c:${esc(c.color)}"></button>`).join('')}</div>
+      </div>`;
     else media = `<img src="${esc(p.image)}" alt="${esc(p.title)}" loading="lazy">`;
     const link = p.url
       ? `<a class="fcard-link" href="${esc(p.url)}" target="_blank" rel="noopener">Visit site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>`
@@ -114,6 +124,53 @@
   }).join('');
 
   reveals(document);
+
+  /* ---------- phone carousels: research panels and work cards swipe sideways ---------- */
+  function carousel(track, label) {
+    const items = [...track.children];
+    if (items.length < 2) return;
+    const bar = document.createElement('div');
+    bar.className = 'swipe-bar';
+    bar.innerHTML = `<button class="swipe-btn" data-dir="-1" aria-label="Previous ${label}"><i class="fa-solid fa-arrow-left"></i></button>
+      <div class="swipe-dots">${items.map((_, i) => `<button data-i="${i}" aria-label="${label} ${i + 1}"></button>`).join('')}</div>
+      <span class="swipe-count"></span>
+      <button class="swipe-btn" data-dir="1" aria-label="Next ${label}"><i class="fa-solid fa-arrow-right"></i></button>`;
+    track.after(bar);
+    const dots = [...bar.querySelectorAll('.swipe-dots button')], count = bar.querySelector('.swipe-count');
+    let cur = 0;
+    const nearest = () => {
+      const mid = track.scrollLeft + track.clientWidth / 2;
+      let best = 0, bd = Infinity;
+      items.forEach((el, i) => { const d = Math.abs(el.offsetLeft + el.offsetWidth / 2 - mid); if (d < bd) { bd = d; best = i; } });
+      return best;
+    };
+    const paint = () => {
+      cur = nearest();
+      dots.forEach((d, i) => d.classList.toggle('on', i === cur));
+      count.textContent = `${cur + 1} / ${items.length}`;
+      bar.querySelector('[data-dir="-1"]').disabled = cur === 0;
+      bar.querySelector('[data-dir="1"]').disabled = cur === items.length - 1;
+      // the row takes the height of the card on screen, so short cards don't leave a gap
+      track.style.height = window.innerWidth <= 960 ? items[cur].offsetHeight + 8 + 'px' : '';
+    };
+    const go = i => {
+      const el = items[Math.max(0, Math.min(items.length - 1, i))];
+      const left = el.offsetLeft - (track.clientWidth - el.offsetWidth) / 2, from = track.scrollLeft;
+      track.scrollTo({ left, behavior: reduce ? 'auto' : 'smooth' });
+      // some browsers skip smooth scrolling (power saving, background tabs); jump if nothing moved
+      setTimeout(() => { if (Math.abs(track.scrollLeft - from) < 2 && Math.abs(left - from) > 2) { track.scrollLeft = left; paint(); } }, 450);
+    };
+    track.addEventListener('scroll', paint, { passive: true });
+    bar.addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b) return;
+      if (b.dataset.dir) go(cur + +b.dataset.dir); else go(+b.dataset.i);
+    });
+    window.addEventListener('resize', paint);
+    if ('ResizeObserver' in window) { const ro = new ResizeObserver(() => paint()); items.forEach(el => ro.observe(el)); }
+    paint();
+  }
+  carousel($('#rnd-stack'), 'project');
+  carousel($('#featured'), 'project');
 
   /* ---------- loader + hero intro ---------- */
   const title = $('#hero-title');

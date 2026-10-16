@@ -1,8 +1,6 @@
-/* 3D: the honeycomb hero field with a floating extruded bee mark, and the VoidFall character viewer. */
+/* 3D: the honeycomb hero field with a floating extruded bee mark. */
 import * as THREE from 'three';
 import { SVGLoader } from 'three/addons/loaders/SVGLoader.js';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -210,66 +208,4 @@ function hive() {
   frame();
 }
 
-/* ================= VOIDFALL VIEWER ================= */
-function voidfall() {
-  const canvas = document.getElementById('voidfall-canvas');
-  if (!canvas) return;
-  let started = false;
-  new IntersectionObserver(([en], io) => {
-    if (!en.isIntersecting || started) return;
-    started = true; io.disconnect();
-
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.outputColorSpace = THREE.SRGBColorSpace;
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(32, 1, 0.01, 100);
-    scene.add(new THREE.HemisphereLight('#ffe0b0', '#1a0f05', 1.4));
-    const k = new THREE.DirectionalLight('#ffffff', 2.2); k.position.set(2, 3, 3); scene.add(k);
-    const r = new THREE.PointLight('#ff6a00', 25, 10); r.position.set(-1.5, 0.5, -1.5); scene.add(r);
-
-    const controls = new OrbitControls(camera, canvas);
-    controls.enableZoom = false; controls.enablePan = false; controls.enableDamping = true;
-    controls.autoRotate = !reduce; controls.autoRotateSpeed = 2.2;
-    controls.minPolarAngle = Math.PI * 0.3; controls.maxPolarAngle = Math.PI * 0.62;
-
-    let mixer = null;
-    new GLTFLoader().load(canvas.dataset.model, gltf => {
-      const model = gltf.scene;
-      model.updateMatrixWorld(true);
-      const box = new THREE.Box3().setFromObject(model, true);
-      const size = box.getSize(new THREE.Vector3()), c = box.getCenter(new THREE.Vector3());
-      model.position.sub(c);
-      const s = 2 / Math.max(size.x, size.y, size.z);
-      model.scale.setScalar(s);
-      model.position.multiplyScalar(s);
-      scene.add(model);
-      if (gltf.animations.length) { mixer = new THREE.AnimationMixer(model); mixer.clipAction(gltf.animations[0]).play(); }
-      camera.position.set(0, 0.15, 4.6);
-      controls.target.set(0, 0, 0);
-      const fb = canvas.parentElement.querySelector('.fallback');
-      if (fb) fb.style.display = 'none';
-    });
-
-    const resize = () => {
-      const w = canvas.clientWidth, h = canvas.clientHeight;
-      renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
-    };
-    window.addEventListener('resize', resize); resize();
-    let vis = true;
-    new IntersectionObserver(([e]) => { vis = e.isIntersecting; }).observe(canvas);
-    const clock = new THREE.Clock();
-    (function loop() {
-      requestAnimationFrame(loop);
-      const dt = clock.getDelta();
-      if (!vis) return;
-      if (mixer) mixer.update(dt);
-      controls.update();
-      renderer.render(scene, camera);
-    })();
-  }, { rootMargin: '200px' }).observe(canvas);
-}
-
 try { hive(); } catch (e) { console.warn('hive', e); }
-try { voidfall(); } catch (e) { console.warn('voidfall', e); }
