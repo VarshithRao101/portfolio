@@ -21,8 +21,8 @@ function hive() {
   renderer.toneMappingExposure = 1.05;
 
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color('#070708');
-  scene.fog = new THREE.Fog('#070708', 18, 46);
+  scene.background = new THREE.Color('#0a0a0a');
+  scene.fog = new THREE.Fog('#0a0a0a', 18, 46);
   const pmrem = new THREE.PMREMGenerator(renderer);
   scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
 

@@ -64,14 +64,14 @@ We strive to create products that improve productivity, enhance learning, simpli
 
 | Division | What it does | Current work |
 |----------|--------------|--------------|
-| TRNT BEE Technologies | Research & development | SIH 2026 Dam Break Inundation Modelling, Thrufter, Cascade |
+| TRNT BEE Technologies | Research & development | Cascade, Thrufter, TrekVana, SIH 2026 Dam Break Inundation Modelling |
 | TRNT BEE Digital Solutions | Apps, platforms and games | ZETA (AI-thon), Inspire (PDemo 101), VoidFall, and the product catalogue below |
-| TRNT BEE Merchandise | Limited in-house merch drops | Hive Store (`shop.html`) |
+| TRNT BEE Merchandise | Limited in-house merch drops | BEE — Collection 01 in the store (`store/`) |
 | BEE SOCIETY | College builder community | Open build sessions, project swarms |
 
 ## Editing the site
 
-All content lives in `js/data.js`: research programs, products, and merch. To add a merch photo, put it in `images/merch/` and set the product's `image` field.
+Site content lives in `js/data.js` (research and products). The store reads every product from `store/products.js`: copy a product block, add photos to `images/merch/`, set a price and change `status` to `available` to make it buyable. Orders are sent to the team by email (or WhatsApp, once `orderWhatsApp` is set); there is no payment backend.
 
 ---
 

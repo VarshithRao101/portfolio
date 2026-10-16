@@ -16,90 +16,78 @@ window.TB = {
   /* 01 — TRNT BEE Technologies (R&D) */
   research: [
     {
-      id: 'sih',
-      code: 'SIH 2026',
-      title: 'Dam Break Inundation Modelling',
-      kicker: 'Smart India Hackathon 2026 · PS 26161',
-      desc: 'Pick any of 5,749 Indian dams and barriers, and the model tells you which villages flood, how deep, and how long they have. A twenty-stage pipeline: river tracing, terrain conditioning, breach physics, a 2D flood solver, an ML surrogate, damage and evacuation planning.',
-      tags: ['Hydrodynamics', 'SPH + 2D solver', 'ML surrogate', 'Geospatial'],
-      status: 'Active research',
-      art: 'flood'
-    },
-    {
-      id: 'thrufter',
-      code: 'THRUFTER',
-      title: 'AI Security Intelligence',
-      kicker: 'Cybersecurity · Patent in progress',
-      desc: 'Not just a vulnerability scanner. Thrufter learns from trusted security sources, turns that into structured intelligence, simulates realistic attacks against an app in its own architectural context, and recommends fixes that fit the stack.',
-      tags: ['AppSec', 'Attack simulation', 'Auto-remediation', 'Self-evolving'],
-      status: 'Patent filing',
-      art: 'shield'
-    },
-    {
-      id: 'cascade',
-      code: 'CASCADE',
-      title: 'Risk-Certified LLM Orchestration',
-      kicker: 'AI infrastructure · Under IP review',
-      desc: 'Every query goes to the cheapest model or tool that can answer it within a certified error limit. Answers are verified and escalated when needed, and quality is never allowed to degrade silently when models or traffic change.',
-      tags: ['LLM routing', 'Verification', 'Self-healing', 'Cost control'],
+      id: 'cascade', viz: 'cascade',
+      label: 'Cascade · Under IP review',
+      title: 'Use the cheapest model that is good enough, and prove it.',
+      body: 'Cascade sends each question to the cheapest model or tool that can answer it within a set error limit, checks the answer, and only moves up a level when it has to. When a model changes underneath it, it re-checks itself instead of quietly getting worse.',
+      facts: [['Rules', 'before models'], ['Checked', 'every answer'], ['Repairs', 'itself on change']],
       status: 'Research build',
-      art: 'cascade'
+      caption: 'Simulated traffic. Numbers are illustrative, not measurements.'
+    },
+    {
+      id: 'thrufter', viz: 'scan',
+      label: 'Thrufter · Patent filing in progress',
+      title: 'A security tool that explains the fix, not just the bug.',
+      body: 'Most scanners check code against a list of known problems. Thrufter keeps learning from trusted security sources, works out how an attack would actually play out in your app, and suggests a fix written for the stack you use.',
+      facts: [['Learns', 'from new advisories'], ['Simulates', 'real attack paths'], ['Fixes', 'for your stack']],
+      status: 'Patent filing in progress',
+      caption: 'Example finding on a small Express route.'
+    },
+    {
+      id: 'trekvana', viz: 'trip',
+      label: 'TrekVana · Patent disclosed, in process',
+      title: 'A trip planner that re-plans itself when things change.',
+      body: 'TrekVana plans a whole trip from your starting point to your destination: transport, stays, food and sightseeing. When a train runs late or the weather turns, it changes the plan for you. It also suggests greener ways to travel, tracks the trip’s carbon footprint, and keeps working offline.',
+      facts: [['End to end', 'trip planning'], ['Live', 're-planning'], ['Offline', 'maps and plans']],
+      status: 'Patent disclosed, in process',
+      caption: 'Example trip. The disruption and numbers are illustrative.'
+    },
+    {
+      id: 'sih', viz: 'flood',
+      label: 'Smart India Hackathon 2026 · Problem 26161',
+      title: 'When a dam fails, how long does a village have?',
+      body: 'Pick any of 5,749 dams and barriers in India and our model works out which villages flood, how deep the water gets, and how many minutes each one has before it arrives. Under the hood: river tracing, terrain clean-up, breach physics, a 2D flood solver and a machine-learning shortcut that makes it fast enough to use in an emergency.',
+      facts: [['5,749', 'dams and barriers'], ['20', 'pipeline stages'], ['2D', 'flood solver + ML']],
+      status: 'In active development',
+      caption: 'A simplified breach running live in your browser. Tap the map to move the dam up or down the river.'
     }
   ],
 
   patents: [
-    { title: 'Thrufter — Secured Vulnerability Checker', status: 'Patent in progress' },
-    { title: 'TrekVana — IoT Trail Design System', status: 'Disclosed · In process' },
-    { title: 'Thrufter — Automated Vulnerability Analysis', status: 'Paper in progress' }
+    { title: 'Thrufter: secured vulnerability checker', status: 'Patent in progress' },
+    { title: 'TrekVana: smart trip planning system', status: 'Disclosed, in process' },
+    { title: 'Thrufter: automated vulnerability analysis', status: 'Paper in progress' }
   ],
 
   /* 02 — TRNT BEE Digital Solutions */
   solutions: [
     {
-      id: 'zeta', title: 'ZETA', featured: true, status: 'live-soon',
-      kicker: 'AI-thon · Automation',
-      desc: 'Describe an automation in plain English and the AI Copilot builds it on a visual canvas. Every run gets a cryptographic receipt anchored on Polygon that anyone can verify.',
-      tags: ['Next.js', 'AI Copilot', 'Polygon'], url: '', art: 'zeta'
+      id: 'zeta', title: 'ZETA', featured: true, status: 'soon', year: '2026',
+      kicker: 'Tri-City AI Hackathon',
+      desc: 'Type what you want automated, like "when someone registers, add them to a sheet and email them", and ZETA builds the workflow. Every run gets a receipt anyone can check.',
+      url: '', art: 'zeta'
     },
     {
-      id: 'inspire', title: 'Inspire', featured: true, status: 'live',
-      kicker: 'PDemo 101 · Website + ERP',
-      desc: 'Public website and internal ERP for a four-campus junior college group: admissions, fees, salaries, expenditure and reporting behind role-based staff portals.',
-      tags: ['React 19', 'Express', 'MongoDB'], url: 'https://inspirehnk.org', image: 'images/projects/inspire.webp'
+      id: 'inspire', title: 'Inspire', featured: true, status: 'live', year: '2026',
+      kicker: 'Website + college ERP',
+      desc: 'The public site and staff ERP for Inspire Junior College. Admissions, fees, salaries and reports for four campuses in one place.',
+      url: 'https://inspirehnk.org', image: 'images/projects/inspire.webp'
     },
     {
-      id: 'voidfall', title: 'VoidFall', featured: true, status: 'dev',
-      kicker: 'Game · 3D endless runner',
-      desc: 'Out of the clouds, down the hill, into the void. A 3D runner on a 38° hillside, built on Three.js with no engine, and five rigged characters. Web, PC, Android and iOS from one codebase.',
-      tags: ['Three.js', 'Blender', 'WebAudio'], url: '', model: 'images/projects/voidfall-flame.glb', image: 'images/projects/voidfall.webp'
+      id: 'voidfall', title: 'VoidFall', featured: true, status: 'dev', year: '2026',
+      kicker: '3D endless runner',
+      desc: 'Run down a 38° hillside from daylight above the clouds into the dark. Built from scratch on Three.js with five rigged characters. Drag the model to spin it.',
+      url: '', model: 'images/projects/voidfall-flame.glb', image: 'images/projects/voidfall.webp'
     },
-    { id: 'beeprepare', title: 'BeePrepare', status: 'live', kicker: 'EdTech', desc: 'Exam paper generator: build, compile and format question banks for teachers in minutes.', tags: ['Next.js', 'PDF', 'SaaS'], url: 'https://beeprepare.in', image: 'images/beeprepare_mockup.webp' },
-    { id: '5indshow', title: '5IndShow', status: 'live', kicker: 'Entertainment', desc: 'Movie and series discovery with deep-link indexing and a fast catalogue.', tags: ['JS', 'TMDB API'], url: 'https://5ind-show.vercel.app', image: 'images/5indshow_mockup.webp' },
-    { id: 'trekvana', title: 'TrekVana', status: 'dev', kicker: 'Travel', desc: 'Tour bookings and holiday itinerary management.', tags: ['Next.js', 'Geo', 'Payments'], url: '', image: 'images/trekvana_mockup.webp' },
-    { id: 'hivemind', title: 'HiveMind', status: 'dev', kicker: 'AI', desc: 'Ask several AI models at once and see where their answers agree.', tags: ['Multi-agent', 'AI'], url: '', image: 'images/hivemind_mockup.webp' },
-    { id: 'rephrasebee', title: 'RephraseBee', status: 'dev', kicker: 'AI', desc: 'Fast sentence and document rephrasing.', tags: ['NLP'], url: '', image: 'images/rephrasebee_mockup.webp' },
-    { id: 'beefile', title: 'BeeFile', status: 'dev', kicker: 'Productivity', desc: 'Merge, split, convert and compress PDFs entirely offline in the browser.', tags: ['WASM', 'PDF'], url: '', image: 'images/beefile_mockup.webp' },
-    { id: 'letscook', title: 'LetsCook', status: 'dev', kicker: 'Lifestyle', desc: 'Recipe explorer with portion scaling and ingredient filters.', tags: ['JS', 'MealDB'], url: '', image: 'images/letscook_mockup.webp' },
-    { id: 'unigames', title: 'UniPlay', status: 'dev', kicker: 'Gaming', desc: 'A portal of 50+ lightweight canvas mini-games built for mobile.', tags: ['Canvas', 'WebSocket'], url: '', image: 'images/unigames_mockup.webp' },
-    { id: 'onepunch', title: 'OnePunch Fall', status: 'dev', kicker: 'Gaming', desc: 'A 3D Unity mobile runner tuned for low-spec phones.', tags: ['Unity', 'C#'], url: '', image: 'images/onepunch_mockup.webp' }
-  ],
-
-  /* 03 — TRNT BEE Merchandise.
-     To add a product photo: drop it in images/merch/ and set `image`. */
-  merch: [
-    {
-      id: 'drop-01', name: 'Hive Drop 01', type: 'Apparel',
-      price: null, // set a number (INR) when pricing is final
-      image: '', // e.g. 'images/merch/drop-01.webp'
-      desc: 'Description coming soon.',
-      sizes: ['S', 'M', 'L', 'XL'], status: 'Coming soon'
-    },
-    {
-      id: 'drop-02', name: 'Hive Drop 02', type: 'Apparel',
-      price: null,
-      image: '',
-      desc: 'Description coming soon.',
-      sizes: ['S', 'M', 'L', 'XL'], status: 'Coming soon'
-    }
+    { id: 'beeprepare', title: 'BeePrepare', status: 'live', kicker: 'EdTech', desc: 'Exam paper generator for teachers.', url: 'https://beeprepare.in', image: 'images/beeprepare_mockup.webp' },
+    { id: '5indshow', title: '5IndShow', status: 'live', kicker: 'Entertainment', desc: 'Find where to watch any movie or series.', url: 'https://5ind-show.vercel.app', image: 'images/5indshow_mockup.webp' },
+    { id: 'trekvana', title: 'TrekVana', status: 'dev', kicker: 'Travel', desc: 'Tour bookings and trip planning.', url: '', image: 'images/trekvana_mockup.webp' },
+    { id: 'hivemind', title: 'HiveMind', status: 'dev', kicker: 'AI', desc: 'Ask several AI models at once and compare answers.', url: '', image: 'images/hivemind_mockup.webp' },
+    { id: 'rephrasebee', title: 'RephraseBee', status: 'dev', kicker: 'AI', desc: 'Rewrite sentences and documents.', url: '', image: 'images/rephrasebee_mockup.webp' },
+    { id: 'beefile', title: 'BeeFile', status: 'dev', kicker: 'Productivity', desc: 'PDF tools that work offline.', url: '', image: 'images/beefile_mockup.webp' },
+    { id: 'letscook', title: 'LetsCook', status: 'dev', kicker: 'Food', desc: 'Recipes with portion scaling.', url: '', image: 'images/letscook_mockup.webp' },
+    { id: 'unigames', title: 'UniPlay', status: 'dev', kicker: 'Games', desc: '50+ small browser games.', url: '', image: 'images/unigames_mockup.webp' },
+    { id: 'onepunch', title: 'OnePunch Fall', status: 'dev', kicker: 'Games', desc: 'Mobile runner built in Unity.', url: '', image: 'images/onepunch_mockup.webp' }
   ]
+  /* Merchandise lives in store/products.js */
 };

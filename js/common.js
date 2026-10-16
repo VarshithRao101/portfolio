@@ -21,7 +21,11 @@
       if (hit) hit.qty++; else items.push({ id, size, qty: 1 });
       cart.save(items);
     },
-    count() { return cart.items().reduce((n, i) => n + i.qty, 0); },
+    count() {
+      const P = window.STORE && window.STORE.products;
+      const ok = i => !P || P.some(p => p.id === i.id && (p.status === 'available' || p.status === 'preorder'));
+      return cart.items().filter(ok).reduce((n, i) => n + i.qty, 0);
+    },
     render() { document.querySelectorAll('[data-cart-count]').forEach(el => { el.textContent = cart.count(); }); }
   };
   cart.render();

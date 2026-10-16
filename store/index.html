@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f6f4ef" />
+  <title>TRNT BEE Store — BEE Collection 01</title>
+  <meta name="description" content="BEE — Collection 01. Still here. Further now. Heavyweight oversized streetwear from TRNT BEE." />
+  <meta property="og:title" content="BEE — Collection 01" />
+  <meta property="og:description" content="Still here. Further now. Coming soon." />
+  <meta property="og:image" content="../images/merch/brown-lookbook.webp" />
+  <link rel="icon" href="../images/brand/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400..600&family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="store.css?v=4" />
+  <link rel="stylesheet" href="campaign.css?v=4" />
+</head>
+<body data-page="home">
+  <main>
+    <!-- CAMPAIGN HERO -->
+    <section class="camp">
+      <div class="wrap camp-grid">
+        <div class="camp-text">
+          <span class="camp-kicker"><i></i>BEE — Collection 01 · Coming soon</span>
+          <h1 class="camp-title"><span>Still here.</span><span>Further now.</span></h1>
+          <p class="camp-intro">A journey beyond the ordinary. Quiet strength. Relentless spirit.</p>
+          <div class="camp-cta">
+            <a class="btn btn-ink" href="#shop">See the collection</a>
+            <a class="btn btn-line" href="#signup">Notify me</a>
+          </div>
+        </div>
+        <div class="camp-media">
+          <span class="camp-kanji" aria-hidden="true">旅</span>
+          <img class="camp-img" src="../images/merch/brown-back.webp" alt="Chocolate brown Still Here tee, back print of a wanderer under a full moon" />
+          <a class="camp-tag" href="product.html?id=still-here-brown"><b>Still Here Tee</b><span>Chocolate Brown</span><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <div class="tape" aria-hidden="true"><div class="tape-track">
+      <span>Still here. Further now.</span><i class="bee"></i><span>Collection 01</span><i class="bee"></i><span>Not made to follow.</span><i class="bee"></i><span>Made to move forward.</span><i class="bee"></i>
+      <span>Still here. Further now.</span><i class="bee"></i><span>Collection 01</span><i class="bee"></i><span>Not made to follow.</span><i class="bee"></i><span>Made to move forward.</span><i class="bee"></i>
+    </div></div>
+
+    <!-- SHOP -->
+    <section class="section" id="shop">
+      <div class="wrap">
+        <div class="shop-head"><h2>Shop <span class="count" id="n"></span></h2><p class="muted">Hover a piece to see the back print.</p></div>
+        <div class="toolbar">
+          <div class="chips" id="chips"></div>
+          <label class="sr" for="sort">Sort</label>
+          <select class="sort" id="sort">
+            <option value="featured">Featured</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+          </select>
+        </div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="story">
+      <div class="wrap story-grid">
+        <div class="story-text reveal">
+          <span class="story-kicker">The story</span>
+          <p class="story-big">Some journeys are fought in silence. Some stories are worn, not told.</p>
+          <p class="story-small">Collection 01 is two oversized tees in olive and chocolate brown, each carrying a lone wanderer under a full moon across the back. Heavyweight streetwear with art you can't miss.</p>
+          <p class="story-closer">Not made to follow.<br>Made to move forward.</p>
+        </div>
+        <figure class="story-img reveal"><img src="../images/merch/olive-back.webp" alt="Olive Still Here tee, back print" loading="lazy" /></figure>
+      </div>
+    </section>
+
+    <!-- LOOKBOOK -->
+    <section class="section lookbook">
+      <div class="wrap">
+        <div class="shop-head"><h2>Lookbook</h2><p class="muted">Front and back, both colours.</p></div>
+        <div class="look-grid">
+          <a class="look reveal" href="product.html?id=still-here-olive"><img src="../images/merch/olive-lookbook.webp" alt="Olive Still Here tee, front and back" loading="lazy" /><span>Olive <i class="fa-solid fa-arrow-right"></i></span></a>
+          <a class="look reveal" href="product.html?id=still-here-brown"><img src="../images/merch/brown-lookbook.webp" alt="Chocolate brown Still Here tee, front and back" loading="lazy" /><span>Chocolate Brown <i class="fa-solid fa-arrow-right"></i></span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="help">
+      <div class="shop-head"><h2>Good to know</h2></div>
+      <div class="help">
+        <div><h3>Shipping</h3><p id="ship-note"></p></div>
+        <div><h3>Payment</h3><p>Send your order from checkout and we'll reply with UPI or bank transfer details. Nothing is charged on the site.</p></div>
+        <div><h3>Returns</h3><p>Wrong size? Email us within 7 days of delivery and we'll exchange it, as long as it's unworn.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="signup">
+      <div class="wrap">
+        <div class="signup">
+          <h2>Be first when Collection 01 drops.</h2>
+          <div>
+            <form id="signup-form">
+              <input id="signup-email" type="email" placeholder="you@email.com" required aria-label="Email" />
+              <button class="btn btn-ink" type="submit">Notify me</button>
+            </form>
+            <p>Opens your email app with the request filled in.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="products.js?v=4"></script>
+  <script src="store.js?v=4"></script>
+</body>
+</html>

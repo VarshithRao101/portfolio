@@ -2,99 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hive Store — TRNT BEE</title>
-  <meta name="description" content="Official TRNT BEE merchandise. Limited drops, designed in-house." />
-  <meta name="theme-color" content="#070708" />
-  <link rel="icon" href="images/brand/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/shop.css" />
-  <script>document.documentElement.classList.add('js')</script>
+  <title>TRNT BEE Store</title>
+  <meta http-equiv="refresh" content="0; url=store/index.html" />
+  <link rel="canonical" href="store/index.html" />
+  <script>location.replace('store/index.html' + (location.hash ? '' : ''));</script>
 </head>
-<body>
-  <div class="grain"></div>
-  <div class="cursor" id="cursor-dot"><div class="cursor-dot"></div></div>
-  <div class="cursor" id="cursor-ring"><div class="cursor-ring"><span id="cursor-label">VIEW</span></div></div>
-
-  <header class="nav" id="nav">
-    <div class="wrap">
-      <a href="index.html" class="brand" aria-label="TRNT BEE home"><i class="bee"></i>TRNT<b>BEE</b></a>
-      <ul class="nav-links">
-        <li><a href="index.html#technologies">R&amp;D</a></li>
-        <li><a href="index.html#solutions">Solutions</a></li>
-        <li><a href="index.html#society">Society</a></li>
-        <li><a href="#products" class="is-active">Shop</a></li>
-      </ul>
-      <button class="nav-cta" id="open-bag">Bag <span class="count" data-cart-count>0</span></button>
-    </div>
-  </header>
-
-  <main>
-    <section class="shop-hero">
-      <i class="bee shop-bee"></i>
-      <div class="wrap">
-        <div class="sec-index mono" style="margin-bottom:26px"><b>03</b>TRNT BEE Merchandise</div>
-        <h1><span class="split-line"><span>HIVE</span></span><span class="split-line"><span class="outline">STORE</span></span></h1>
-        <div class="shop-hero-row">
-          <p>Limited drops, designed in-house by the people building TRNT BEE. Every piece carries the mark.</p>
-          <a href="#notify" class="btn">Get drop alerts <i class="fa-solid fa-arrow-right arrow"></i></a>
-        </div>
-      </div>
-    </section>
-
-    <div class="shop-bar">
-      <div class="wrap">
-        <div class="filters" id="shop-filters"><button class="is-on" data-f="all">All</button></div>
-        <span class="mono dim" id="shop-count"></span>
-      </div>
-    </div>
-
-    <section class="wrap" id="products">
-      <div class="shop-grid" id="shop-grid"></div>
-
-      <div class="notify" id="notify" data-reveal>
-        <div>
-          <span class="mono" style="color:var(--honey)">Drop alerts</span>
-          <h2 style="margin-top:14px">Be first when <em>the drop lands.</em></h2>
-        </div>
-        <div>
-          <form id="notify-form">
-            <input type="email" id="notify-email" placeholder="you@email.com" required aria-label="Email" />
-            <button class="btn btn-solid" type="submit">Notify me</button>
-          </form>
-          <p class="dim" style="font-size:13px;margin-top:12px;padding-left:18px">Opens your email app with a pre-filled request to the BEE SOCIETY team.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap">
-      <div class="footer-bottom" style="margin-top:0"><span>© <span data-year></span> TRNT BEE</span><a href="index.html" class="mono">← Back to the hive</a></div>
-    </div>
-  </footer>
-
-  <!-- product modal -->
-  <div class="overlay" id="overlay"></div>
-  <div class="pmodal" id="pmodal" role="dialog" aria-modal="true" aria-label="Product"></div>
-
-  <!-- bag -->
-  <aside class="drawer" id="drawer" aria-label="Shopping bag">
-    <div class="drawer-head"><h3>Your bag</h3><button class="x-btn" id="close-bag" aria-label="Close"><i class="fa-solid fa-xmark"></i></button></div>
-    <div class="drawer-items" id="bag-items"></div>
-    <div class="drawer-foot" id="bag-foot"></div>
-  </aside>
-  <div class="toast" id="toast"></div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-  <script src="js/data.js"></script>
-  <script src="js/common.js"></script>
-  <script src="js/shop.js"></script>
+<body style="background:#f6f4ef;font-family:system-ui;padding:40px">
+  <a href="store/index.html">Go to the TRNT BEE Store</a>
 </body>
 </html>

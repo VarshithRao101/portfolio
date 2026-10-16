@@ -2,60 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TRNT BEE — One hive. Four divisions.</title>
-  <meta name="description" content="TRNT BEE is a student-led software studio: Technologies (R&D), Digital Solutions, Merchandise and BEE SOCIETY." />
-  <meta name="theme-color" content="#070708" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>TRNT BEE</title>
+  <meta name="description" content="TRNT BEE is a student-run studio: a research lab, a product studio, a merch label and the BEE SOCIETY community." />
+  <meta name="theme-color" content="#0a0a0a" />
   <meta property="og:title" content="TRNT BEE" />
-  <meta property="og:description" content="One hive. Four divisions. R&D, digital products, merch and the BEE SOCIETY community." />
+  <meta property="og:description" content="Research, software, merch and BEE SOCIETY." />
   <meta property="og:image" content="images/brand/trntbee-logo.webp" />
   <link rel="icon" href="images/brand/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/main.css?v=5" />
+  <link rel="stylesheet" href="css/trip.css?v=5" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body class="is-loading">
 
   <div class="loader" id="loader">
-    <div class="loader-inner">
-      <div class="loader-bee"><i class="bee"></i><i class="bee fill" id="loader-fill"></i></div>
-      <div class="loader-count"><span id="loader-num">000</span> / 100</div>
-    </div>
+    <div class="loader-bee"><i class="bee"></i><i class="bee fill" id="loader-fill"></i></div>
+    <div class="loader-count" id="loader-num">0</div>
   </div>
-  <div class="loader-curtain" id="curtain"></div>
 
   <div class="grain"></div>
   <div class="cursor" id="cursor-dot"><div class="cursor-dot"></div></div>
-  <div class="cursor" id="cursor-ring"><div class="cursor-ring"><span id="cursor-label">VIEW</span></div></div>
+  <div class="cursor" id="cursor-ring"><div class="cursor-ring"><span id="cursor-label"></span></div></div>
+  <div class="peek" id="peek"><img alt="" /></div>
 
   <!-- NAV -->
   <header class="nav" id="nav">
     <div class="wrap">
-      <a href="#top" class="brand" aria-label="TRNT BEE home"><i class="bee"></i>TRNT<b>BEE</b></a>
+      <a href="#top" class="brand" aria-label="TRNT BEE home"><i class="bee"></i><span>TRNT BEE</span></a>
       <ul class="nav-links">
-        <li><a href="#divisions">Divisions</a></li>
-        <li><a href="#technologies">R&amp;D</a></li>
-        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#technologies">Research</a></li>
+        <li><a href="#solutions">Work</a></li>
         <li><a href="#merch">Merch</a></li>
         <li><a href="#society">Society</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div style="display:flex;gap:10px;align-items:center">
-        <a href="shop.html" class="nav-cta hide-sm">Shop <span class="count" data-cart-count>0</span></a>
+      <div class="nav-right">
+        <a href="store/index.html" class="nav-cta">Shop <span class="count" data-cart-count>0</span></a>
         <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
       </div>
     </div>
   </header>
   <nav class="mobile-menu" id="mobile-menu">
-    <a href="#technologies">R&amp;D <small>01</small></a>
-    <a href="#solutions">Solutions <small>02</small></a>
-    <a href="#merch">Merch <small>03</small></a>
-    <a href="#society">Society <small>04</small></a>
-    <a href="#contact">Contact <small>05</small></a>
-    <a href="shop.html" style="color:var(--honey)">Shop <small>→</small></a>
+    <a href="#technologies"><small>01</small>Research</a>
+    <a href="#solutions"><small>02</small>Work</a>
+    <a href="#merch"><small>03</small>Merch</a>
+    <a href="#society"><small>04</small>Society</a>
+    <a href="#contact"><small>05</small>Contact</a>
+    <div class="mobile-menu-foot">
+      <a href="https://www.instagram.com/beesociety101" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://github.com/varshithrao101" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://youtube.com/@beesociety-d6y" target="_blank" rel="noopener">YouTube</a>
+    </div>
   </nav>
 
   <main id="top">
@@ -63,160 +65,139 @@
     <section class="hero" id="hero">
       <canvas id="hive-canvas"></canvas>
       <div class="hero-content wrap">
-        <div class="hero-eyebrow mono"><i></i> Student-led software studio · Est. 2025</div>
-        <h1 class="hero-title" id="hero-title">
-          <span class="word">TRNT</span>
-          <span class="word honey">BEE</span>
-        </h1>
+        <h1 class="hero-title" id="hero-title"><span class="word">TRNT</span> <span class="word honey">BEE</span></h1>
         <div class="hero-bottom">
-          <p class="hero-tag" data-hero>One hive. <em>Four divisions.</em> Research, products, merch and a community that builds together.</p>
-          <p class="hero-desc" data-hero>We research hard problems, ship real software, and grow the next generation of builders through BEE SOCIETY.</p>
-          <div class="scroll-cue mono" data-hero><span></span>Scroll</div>
+          <p class="hero-tag" data-hero>A student-run studio. We do research, build software, make merch, and run BEE SOCIETY.</p>
+          <a href="#technologies" class="hero-scroll" data-hero aria-label="Scroll to research"><i class="fa-solid fa-arrow-down"></i></a>
         </div>
       </div>
     </section>
 
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <div class="marquee-item"><span>Technologies</span><i class="bee"></i></div>
-        <div class="marquee-item"><span>Digital Solutions</span><i class="bee"></i></div>
-        <div class="marquee-item"><span>Merchandise</span><i class="bee"></i></div>
-        <div class="marquee-item"><span>Bee Society</span><i class="bee"></i></div>
-        <div class="marquee-item"><span>Technologies</span><i class="bee"></i></div>
-        <div class="marquee-item"><span>Digital Solutions</span><i class="bee"></i></div>
-        <div class="marquee-item"><span>Merchandise</span><i class="bee"></i></div>
-        <div class="marquee-item"><span>Bee Society</span><i class="bee"></i></div>
+    <!-- TICKER: real numbers from the work -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>5,749 dams mapped</span><i class="bee"></i>
+        <span>4 campuses on one ERP</span><i class="bee"></i>
+        <span>5 rigged 3D characters</span><i class="bee"></i>
+        <span>2 patent filings</span><i class="bee"></i>
+        <span>12+ products built</span><i class="bee"></i>
+        <span>5,749 dams mapped</span><i class="bee"></i>
+        <span>4 campuses on one ERP</span><i class="bee"></i>
+        <span>5 rigged 3D characters</span><i class="bee"></i>
+        <span>2 patent filings</span><i class="bee"></i>
+        <span>12+ products built</span><i class="bee"></i>
       </div>
     </div>
 
-    <!-- MANIFESTO -->
-    <section class="section manifesto">
+    <!-- INTRO + DIVISIONS -->
+    <section class="section intro" id="divisions">
       <div class="wrap">
-        <div class="sec-index mono" style="margin-bottom:34px"><b>00</b> The hive</div>
-        <p id="manifesto-text">Started in our first year of college, TRNT BEE is a studio that treats software like a hive. Every cell has a job: |research| that pushes the edge, |products| people actually use, |merch| that carries the mark, and a |society| of builders who make it all possible.</p>
-        <div class="manifesto-meta">
-          <div class="stat"><b data-count="4">0</b><span class="mono">Divisions</span></div>
-          <div class="stat"><b data-count="3">0</b><span class="mono">R&amp;D programs</span></div>
-          <div class="stat"><b data-count="12" data-suffix="+">0</b><span class="mono">Products built</span></div>
-          <div class="stat"><b data-count="2">0</b><span class="mono">Patents in progress</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DIVISIONS -->
-    <section class="section" id="divisions" style="padding-top:0">
-      <div class="wrap">
-        <div class="sec-head">
-          <div class="sec-index mono"><b>Index</b>Four divisions</div>
-          <div>
-            <h2 class="sec-title" data-split>The hive, <em>in four cells.</em></h2>
-          </div>
-        </div>
-        <ul class="divisions">
-          <li class="division" data-reveal><a href="#technologies" data-cursor="OPEN">
-            <span class="num">01</span>
-            <h3><small>TRNT BEE</small>Technologies</h3>
-            <p class="d-desc">Research &amp; development. Flood modelling, AI security and certified LLM orchestration.</p>
+        <p class="intro-text" id="intro-text">We started TRNT BEE in our first year of college because we wanted to build real things, not just class assignments. Today it has four parts.</p>
+        <ol class="divisions">
+          <li class="division" data-reveal><a href="#technologies">
+            <span class="d-num">01</span>
+            <span class="d-name">Technologies</span>
+            <span class="d-desc">Our research lab. Flood forecasting, AI security and LLM routing.</span>
             <span class="d-arrow"><i class="fa-solid fa-arrow-right"></i></span></a></li>
-          <li class="division" data-reveal><a href="#solutions" data-cursor="OPEN">
-            <span class="num">02</span>
-            <h3><small>TRNT BEE</small>Digital Solutions</h3>
-            <p class="d-desc">Apps, platforms and games we design, build and ship for real users.</p>
+          <li class="division" data-reveal><a href="#solutions">
+            <span class="d-num">02</span>
+            <span class="d-name">Digital Solutions</span>
+            <span class="d-desc">Websites, apps and games we build and ship.</span>
             <span class="d-arrow"><i class="fa-solid fa-arrow-right"></i></span></a></li>
-          <li class="division" data-reveal><a href="#merch" data-cursor="OPEN">
-            <span class="num">03</span>
-            <h3><small>TRNT BEE</small>Merchandise</h3>
-            <p class="d-desc">Wear the hive. Limited drops, designed in-house.</p>
+          <li class="division" data-reveal><a href="#merch">
+            <span class="d-num">03</span>
+            <span class="d-name">Merchandise</span>
+            <span class="d-desc">Clothing and goods with the bee on it.</span>
             <span class="d-arrow"><i class="fa-solid fa-arrow-right"></i></span></a></li>
-          <li class="division" data-reveal><a href="#society" data-cursor="OPEN">
-            <span class="num">04</span>
-            <h3><small>TRNT BEE</small>Bee Society</h3>
-            <p class="d-desc">A college community of builders who explore new stacks and ship projects together.</p>
+          <li class="division" data-reveal><a href="#society">
+            <span class="d-num">04</span>
+            <span class="d-name">BEE SOCIETY</span>
+            <span class="d-desc">The student community where most of our projects start.</span>
             <span class="d-arrow"><i class="fa-solid fa-arrow-right"></i></span></a></li>
-        </ul>
+        </ol>
       </div>
     </section>
 
     <!-- 01 TECHNOLOGIES -->
     <section class="section rnd" id="technologies">
       <div class="wrap">
-        <div class="sec-head">
-          <div class="sec-index mono"><b>01</b>Technologies · R&amp;D</div>
-          <div>
-            <h2 class="sec-title" data-split>Research at <em>the edge.</em></h2>
-            <p class="sec-sub" data-reveal>Three programs we're working on right now. Long-horizon problems where a better answer actually matters.</p>
-          </div>
-        </div>
+        <header class="sec-head">
+          <span class="sec-label">01 — Technologies</span>
+          <h2 class="sec-title" data-split>Research</h2>
+          <p class="sec-sub" data-reveal>Three problems we're working on right now. The demos below run live in your browser.</p>
+        </header>
       </div>
-      <div class="rnd-pin" id="rnd-pin">
-        <div class="rnd-track" id="rnd-track"></div>
-        <div class="rnd-progress"><i id="rnd-bar"></i></div>
+      <div class="wrap rnd-stack" id="rnd-stack"></div>
+      <div class="wrap">
+        <div class="ip" data-reveal>
+          <h3>Patents and papers</h3>
+          <ul class="ip-list" id="ip-list"></ul>
+        </div>
       </div>
     </section>
 
-    <!-- 02 SOLUTIONS -->
-    <section class="section" id="solutions">
+    <!-- 02 SOLUTIONS (light) -->
+    <section class="section light" id="solutions">
       <div class="wrap">
-        <div class="sec-head">
-          <div class="sec-index mono"><b>02</b>Digital Solutions</div>
-          <div>
-            <h2 class="sec-title" data-split>Things we've <em>shipped.</em></h2>
-            <p class="sec-sub" data-reveal>From hackathon builds to a live college ERP and a 3D game. More are coming soon.</p>
-          </div>
-        </div>
+        <header class="sec-head">
+          <span class="sec-label">02 — Digital Solutions</span>
+          <h2 class="sec-title" data-split>Work</h2>
+          <p class="sec-sub" data-reveal>Things we've built and shipped, from a hackathon win to a college ERP that runs every day.</p>
+        </header>
         <div class="featured" id="featured"></div>
-        <div class="sol-toolbar">
-          <h3>The full catalogue</h3>
+
+        <div class="cat-head">
+          <h3>Everything else</h3>
           <div class="filters" id="filters">
             <button class="is-on" data-f="all">All</button>
             <button data-f="live">Live</button>
-            <button data-f="dev">In development</button>
+            <button data-f="dev">Building</button>
           </div>
         </div>
-        <div class="grid" id="sol-grid"></div>
+        <ul class="catalogue" id="catalogue"></ul>
       </div>
     </section>
 
-    <!-- 03 MERCH -->
-    <section class="section" id="merch" style="padding-top:0">
+    <!-- 03 MERCH (honey) -->
+    <section class="section merch-sec" id="merch">
       <div class="wrap">
-        <div class="sec-head">
-          <div class="sec-index mono"><b>03</b>Merchandise</div>
-          <div>
-            <h2 class="sec-title" data-split>Wear <em>the hive.</em></h2>
-          </div>
-        </div>
+        <header class="sec-head merch-head">
+          <span class="sec-label">03 — Merchandise · BEE Collection 01</span>
+          <h2 class="sec-title merch-title" data-split>Still here. Further now.</h2>
+        </header>
         <div class="merch-wrap">
           <div class="merch-intro" data-reveal>
-            <h3>Limited drops, designed in-house by the people building TRNT BEE.</h3>
-            <div>
-              <p class="dim" style="margin-bottom:24px">First drop lands soon. Get on the list in the shop and you'll hear before anyone else.</p>
-              <a href="shop.html" class="btn btn-solid">Enter the shop <i class="fa-solid fa-arrow-right arrow"></i></a>
+            <p class="merch-story">Some journeys are fought in silence. Some stories are worn, not told.</p>
+            <p class="merch-sub">Two heavyweight oversized tees in olive and chocolate brown, each with a lone wanderer under a full moon across the back.</p>
+            <p class="merch-closer">Not made to follow. Made to move forward.</p>
+            <div class="merch-cta">
+              <a href="store/index.html" class="btn btn-solid">Visit the store <i class="fa-solid fa-arrow-right arrow"></i></a>
+              <span class="merch-soon">Coming soon</span>
             </div>
           </div>
-          <div id="merch-teaser" style="display:contents"></div>
+          <div class="merch-cards" id="merch-teaser"></div>
         </div>
       </div>
     </section>
 
     <!-- 04 SOCIETY -->
-    <section class="section society" id="society">
+    <section class="society" id="society">
       <div class="society-media"><video src="images/society.mp4" muted loop playsinline autoplay preload="metadata"></video></div>
       <div class="society-inner wrap">
-        <div class="sec-index mono" style="margin-bottom:28px"><b>04</b>Bee Society</div>
+        <span class="sec-label">04 — BEE SOCIETY</span>
         <h2 class="society-big"><span class="split-line"><span>BEE</span></span><span class="split-line"><span class="outline">SOCIETY</span></span></h2>
         <div class="society-grid">
-          <p data-reveal><strong>BEE SOCIETY is where TRNT BEE starts.</strong> A college community of builders who explore new tech stacks, prototype together and work on real projects with us. Ideas get proposed, voted on and built in open sessions, and the best ones become products.</p>
+          <p data-reveal>BEE SOCIETY is the student community behind TRNT BEE. We get together, pitch ideas, split into small teams and build them. Most of what's on this page started there.</p>
           <div data-reveal>
             <ul class="pillars">
-              <li><span>01</span><div><b>Ideate in swarm</b><div class="dim">Open sessions where members propose, vote and prototype fast.</div></div></li>
-              <li><span>02</span><div><b>Fork &amp; build</b><div class="dim">Small teams own a module and ship it on their own stack.</div></div></li>
-              <li><span>03</span><div><b>Launch together</b><div class="dim">Real users, real feedback, and your name on the product.</div></div></li>
+              <li><b>Open build sessions</b><span>Bring an idea or join someone else's.</span></li>
+              <li><b>Small teams, real projects</b><span>Each team owns one piece and ships it.</span></li>
+              <li><b>Your name on it</b><span>If it launches, you're credited.</span></li>
             </ul>
             <div class="join">
-              <a class="btn btn-solid" href="https://chat.whatsapp.com/KTangyVdEt9AZdgoTCUPyY" target="_blank" rel="noopener">Join the swarm <i class="fa-brands fa-whatsapp arrow"></i></a>
-              <a class="btn" href="https://www.instagram.com/beesociety101" target="_blank" rel="noopener">Instagram <i class="fa-solid fa-arrow-right arrow"></i></a>
-              <a class="btn" href="https://discord.gg/wmfEVHTS" target="_blank" rel="noopener">Discord <i class="fa-solid fa-arrow-right arrow"></i></a>
+              <a class="btn btn-solid" href="https://chat.whatsapp.com/KTangyVdEt9AZdgoTCUPyY" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Join on WhatsApp</a>
+              <a class="btn" href="https://www.instagram.com/beesociety101" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+              <a class="btn" href="https://discord.gg/wmfEVHTS" target="_blank" rel="noopener"><i class="fa-brands fa-discord"></i> Discord</a>
             </div>
           </div>
         </div>
@@ -224,19 +205,17 @@
     </section>
 
     <!-- CONTACT -->
-    <section class="section" id="contact">
+    <section class="section contact" id="contact">
       <div class="wrap contact-grid">
-        <div class="founder" data-reveal>
+        <figure class="founder" data-reveal>
           <img src="images/founder.webp" alt="Varshith, founder of TRNT BEE" loading="lazy" />
-          <div class="founder-cap">
-            <div><b>Varshith</b><span>Founder &amp; Lead Architect</span></div>
-            <i class="bee" style="font-size:30px;color:var(--honey)"></i>
-          </div>
-        </div>
-        <div>
-          <div class="sec-index mono" style="margin-bottom:24px"><b>05</b>Contact</div>
-          <h2 class="contact-title" data-split>Have something <em>worth building?</em></h2>
-          <a class="mail-big" href="mailto:ravindarraodevarneni@gmail.com" data-cursor="MAIL">ravindarraodevarneni@gmail.com</a>
+          <figcaption><b>Varshith</b><span>Founder</span></figcaption>
+        </figure>
+        <div class="contact-body">
+          <span class="sec-label">05 — Contact</span>
+          <h2 class="contact-title" data-split>Got a project, or want to join?</h2>
+          <p class="dim contact-sub" data-reveal>Email me directly. I read everything.</p>
+          <a class="mail-big" href="mailto:ravindarraodevarneni@gmail.com">ravindarraodevarneni@gmail.com <i class="fa-solid fa-arrow-right"></i></a>
           <div class="socials">
             <a class="social" href="https://github.com/varshithrao101" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
             <a class="social" href="https://www.instagram.com/vars.101" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -252,21 +231,14 @@
   <footer class="footer">
     <div class="wrap">
       <div class="footer-top">
-        <div>
-          <a href="#top" class="brand"><i class="bee"></i>TRNT<b>BEE</b></a>
-          <p class="dim" style="max-width:340px;margin-top:14px">A student-led software studio. Research, products, merch and community.</p>
-        </div>
-        <div><h5>Divisions</h5><ul>
-          <li><a href="#technologies">Technologies</a></li><li><a href="#solutions">Digital Solutions</a></li>
-          <li><a href="#merch">Merchandise</a></li><li><a href="#society">Bee Society</a></li></ul></div>
-        <div><h5>Shop</h5><ul><li><a href="shop.html">All products</a></li><li><a href="shop.html#notify">Drop alerts</a></li></ul></div>
-        <div><h5>Social</h5><ul>
-          <li><a href="https://www.instagram.com/beesociety101" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://youtube.com/@beesociety-d6y" target="_blank" rel="noopener">YouTube</a></li>
-          <li><a href="https://github.com/varshithrao101" target="_blank" rel="noopener">GitHub</a></li></ul></div>
+        <a href="#top" class="brand"><i class="bee"></i><span>TRNT BEE</span></a>
+        <nav class="footer-links">
+          <a href="#technologies">Research</a><a href="#solutions">Work</a><a href="#merch">Merch</a>
+          <a href="#society">Society</a><a href="store/index.html">Store</a>
+        </nav>
       </div>
-      <div class="footer-word" id="footer-word">TRNT BEE</div>
-      <div class="footer-bottom"><span>© <span data-year></span> TRNT BEE. All rights reserved.</span><span class="mono">Built by the hive</span></div>
+      <div class="footer-word" id="footer-word" aria-hidden="true">TRNT BEE</div>
+      <div class="footer-bottom"><span>© <span data-year></span> TRNT BEE</span><a href="#top">Back to top ↑</a></div>
     </div>
   </footer>
 
@@ -279,9 +251,12 @@
       "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
     } }
   </script>
-  <script src="js/data.js"></script>
-  <script src="js/common.js"></script>
-  <script src="js/home.js"></script>
-  <script type="module" src="js/hive3d.js"></script>
+  <script src="js/data.js?v=4"></script>
+  <script src="store/products.js?v=4"></script>
+  <script src="js/common.js?v=4"></script>
+  <script src="js/rnd.js?v=5"></script>
+  <script src="js/rnd-trip.js?v=4"></script>
+  <script src="js/home.js?v=5"></script>
+  <script type="module" src="js/hive3d.js?v=4"></script>
 </body>
 </html>
