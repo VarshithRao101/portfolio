@@ -448,3 +448,7 @@ ul, ol { list-style: none; }
 .merch-sec .mcard-body .price { color: #5a3a22; font-weight: 600; font-size: 13.5px; }
 @media (max-width: 860px) { .merch-sec .merch-wrap { grid-template-columns: 1fr; } .merch-closer { margin-top: 0; } }
 @media (max-width: 520px) { .merch-sec .mcard-body { flex-direction: column; align-items: flex-start; gap: 4px; } .merch-sec .mcard-body h4 { font-size: 17px; } }
+
+/* merch cards: swap back print for front cleanly (both photos use multiply) */
+.merch-sec .mcard-media { isolation: isolate; }
+@media (hover: hover) { .merch-sec .mcard:hover .mcard-media img:not(.alt) { opacity: 0; } }
