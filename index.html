@@ -12,11 +12,12 @@
   <link rel="icon" href="images/brand/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&family=Inter:wght@400..700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="css/main.css?v=6" />
   <link rel="stylesheet" href="css/trip.css?v=6" />
   <link rel="stylesheet" href="css/showcase.css?v=8" />
+  <link rel="stylesheet" href="css/mosaic.css?v=2" />
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body class="is-loading">
@@ -71,6 +72,69 @@
           <p class="hero-tag" data-hero>A student-run studio. We do research, build software, make merch, and run BEE SOCIETY.</p>
           <a href="#technologies" class="hero-scroll" data-hero aria-label="Scroll to research"><i class="fa-solid fa-arrow-down"></i></a>
         </div>
+      </div>
+    </section>
+
+    <!-- MOSAIC: studio overview with an endless photo wall -->
+    <section class="mosaic" id="studio" aria-label="TRNT BEE studio overview">
+      <div class="m-stage">
+        <header class="m-hdr">
+          <div class="m-util">
+            <a class="u-item" href="mailto:ravindarraodevarneni@gmail.com" aria-label="Email the studio">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1.5" y="3" width="13" height="10" rx="2"/><path d="m2 4 6 5 6-5"/></svg>
+              <span><b>Studio</b> : project enquiries<br>ravindarraodevarneni@gmail.com</span>
+            </a>
+            <span class="u-rule"></span>
+            <a class="u-item" href="https://chat.whatsapp.com/KTangyVdEt9AZdgoTCUPyY" target="_blank" rel="noopener" aria-label="Join BEE SOCIETY on WhatsApp">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="5.5" cy="5.5" r="2.5"/><circle cx="11.5" cy="6.5" r="2"/><path d="M1.5 14c0-2.5 1.8-4 4-4s4 1.5 4 4M10 10.2c.5-.2 1-.3 1.5-.3 1.8 0 3 1.2 3 3.6"/></svg>
+              <span><b>BEE SOCIETY</b> : join the<br>student community</span>
+            </a>
+            <nav class="m-unav" aria-label="Useful links">
+              <a href="#technologies">Patents</a>
+              <a href="#technologies">Hackathons</a>
+              <a class="two" href="store/index.html">Collection<br>01</a>
+              <a href="https://www.instagram.com/beesociety101" target="_blank" rel="noopener">Instagram</a>
+              <a class="two" href="#contact">Work<br>with us</a>
+              <a class="m-ubtn" href="https://github.com/varshithrao101" target="_blank" rel="noopener" aria-label="TRNT BEE on GitHub">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 0 0-2.5 15.6c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.4.7 0-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.5 7.5 0 0 1 4 0c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.8-3.6 4 .3.3.6.8.6 1.5v2.2c0 .2.1.5.6.4A8 8 0 0 0 8 0Z"/></svg>
+              </a>
+            </nav>
+          </div>
+          <div class="m-main">
+            <a class="m-logo" href="#top" aria-label="TRNT BEE, back to top"><b><i></i>TRNT BEE</b><small>A STUDIO BUILT IN COLLEGE</small></a>
+            <nav class="m-nav" aria-label="Main navigation">
+              <a href="#technologies">Research <span class="circ"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5"/></svg></span></a>
+              <span class="sep"></span>
+              <a href="#solutions">Work</a>
+              <a href="#society">Society</a>
+              <button type="button" data-open-menu aria-label="Open menu"><span class="m-burger"><span></span><span></span><span></span></span>Menu</button>
+            </nav>
+            <a class="m-cta" href="store/index.html" aria-label="Open the TRNT BEE store">
+              <span class="pill">Store</span>
+              <span class="ring"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5"/></svg></span>
+            </a>
+          </div>
+        </header>
+
+        <div class="m-hero">
+          <h1 class="m-h1" aria-label="Research. Software. Merch. Society.">
+            <span class="ln"><span>Research.</span></span>
+            <span class="ln"><span>Software.</span></span>
+            <span class="ln"><span>Merch.</span></span>
+            <span class="ln"><span class="hl">Society.</span></span>
+          </h1>
+          <p class="m-p">TRNT BEE is a student-run studio. We research hard problems, ship software people use, make clothing worth wearing, and run <b>BEE SOCIETY</b>, the community where it all starts.</p>
+          <div class="m-acts">
+            <a class="m-cta" href="store/index.html" aria-label="Open the TRNT BEE store">
+              <span class="pill">Store</span>
+              <span class="ring"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11h14M12.5 5.5 18 11l-5.5 5.5"/></svg></span>
+            </a>
+            <a class="m-link" href="#technologies">Research <span class="circ"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="m-fade" aria-hidden="true"></div>
+        <div class="m-grid" id="m-grid" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -258,6 +322,7 @@
   <script src="js/rnd.js?v=8"></script>
   <script src="js/rnd-trip.js?v=6"></script>
   <script src="js/home.js?v=11"></script>
+  <script src="js/mosaic.js?v=2"></script>
   <script type="module" src="js/hive3d.js?v=6"></script>
   <script type="module" src="js/voidfall.js?v=7"></script>
 </body>
