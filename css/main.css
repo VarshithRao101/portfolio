@@ -67,6 +67,20 @@ ul, ol { list-style: none; }
 .cursor.is-label .cursor-ring span { opacity: 1; }
 @media (hover: none), (pointer: coarse) { .cursor, .peek { display: none !important; } }
 
+/* ============ water ink canvas ============ */
+#water-ink-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 95;
+  mix-blend-mode: difference;
+}
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  #water-ink-canvas { display: none !important; }
+}
+
 /* ============ loader ============ */
 .loader { position: fixed; inset: 0; z-index: 200; background: var(--bg); display: grid; place-items: center; clip-path: inset(0 0 0 0); }
 .loader-bee { position: relative; width: 84px; height: 84px; font-size: 84px; color: rgba(255,255,255,.08); }
