@@ -33,7 +33,8 @@
   /* ---------- smooth scroll ---------- */
   let lenis = null;
   if (!reduce && window.Lenis) {
-    lenis = new Lenis({ duration: 1.15, smoothWheel: true });
+    // slow, weighty scrolling: low lerp means each wheel tick glides out over longer
+    lenis = new Lenis({ lerp: 0.055, wheelMultiplier: 0.8, touchMultiplier: 1.2, smoothWheel: true });
     if (hasGsap) {
       lenis.on('scroll', ScrollTrigger.update);
       gsap.ticker.add(t => lenis.raf(t * 1000));
@@ -52,7 +53,7 @@
     e.preventDefault();
     document.documentElement.classList.remove('menu-open');
     if (lenis) lenis.start();
-    if (lenis) lenis.scrollTo(id === '#top' ? 0 : target, { offset: 0, duration: 1.4 });
+    if (lenis) lenis.scrollTo(id === '#top' ? 0 : target, { offset: 0, duration: 2.2, easing: t => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)) });
     else target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
   });
 

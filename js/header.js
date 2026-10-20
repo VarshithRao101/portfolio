@@ -32,13 +32,21 @@
       root.classList.add('menu-open');
       if (window.TBX && window.TBX.lenis) window.TBX.lenis.stop();
     });
+    // the section you're in gets a small honey dot under its link
+    const links = [...hdr.querySelectorAll('.sh-nav a')];
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => entries.forEach(en => {
+        if (en.isIntersecting) links.forEach(l => l.classList.toggle('is-active', l.getAttribute('href') === '#' + en.target.id));
+      }), { rootMargin: '-45% 0px -50% 0px' });
+      links.forEach(l => { const t = document.querySelector(l.getAttribute('href')); if (t) io.observe(t); });
+    }
     // drop in once the loader is gone
     if (!reduce && hdr.animate && getComputedStyle(hdr).display !== 'none') {
       hdr.style.transform = 'translateY(calc(-100% - 40px))';
       const start = () => {
         hdr.style.transform = '';
         hdr.animate([{ transform: 'translateY(calc(-100% - 40px))' }, { transform: 'translateY(0)' }], { duration: 1100, easing: 'cubic-bezier(.16,1,.3,1)' });
-        [...hdr.querySelectorAll('.m-util > *, .m-logo, .m-nav > *, .m-main > .m-cta')].forEach((el, i) =>
+        [...hdr.querySelectorAll('.sh-logo, .sh-nav a, .sh-right > *')].forEach((el, i) =>
           el.animate([{ opacity: 0, transform: 'translateY(-8px)' }, { opacity: 1, transform: 'none' }], { duration: 800, delay: 260 + i * 45, easing: 'cubic-bezier(.25,1,.5,1)', fill: 'backwards' }));
       };
       const wait = () => document.body.classList.contains('is-loading') ? setTimeout(wait, 120) : setTimeout(start, 250);

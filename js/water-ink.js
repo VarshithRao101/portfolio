@@ -17,14 +17,14 @@
   const CFG = {
     SIM_RES: 128,              // velocity grid (short side)
     DYE_RES: 768,              // ink grid (short side)
-    DENSITY_DISSIPATION: 1.35, // how fast ink fades
-    VELOCITY_DISSIPATION: 0.9, // how fast the water calms
+    DENSITY_DISSIPATION: 2.4, // how fast ink fades
+    VELOCITY_DISSIPATION: 1.6, // how fast the water calms
     PRESSURE: 0.8,
     PRESSURE_ITERATIONS: 18,
-    CURL: 28,                  // swirl
-    SPLAT_RADIUS: 0.0012,      // ink blob size (fraction of screen, squared falloff)
-    SPLAT_FORCE: 5200,
-    INK: 0.62,                 // ink per sample at normal speed
+    CURL: 7,                  // swirl
+    SPLAT_RADIUS: 0.00032,      // ink blob size (fraction of screen, squared falloff)
+    SPLAT_FORCE: 3600,
+    INK: 0.32,                 // ink per sample at normal speed
     SLEEP_AFTER: 4000          // ms without input before the sim stops
   };
 
