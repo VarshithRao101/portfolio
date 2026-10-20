@@ -34,7 +34,7 @@
   let lenis = null;
   if (!reduce && window.Lenis) {
     // slow, weighty scrolling: low lerp means each wheel tick glides out over longer
-    lenis = new Lenis({ lerp: 0.055, wheelMultiplier: 0.8, touchMultiplier: 1.2, smoothWheel: true });
+    lenis = new Lenis({ lerp: 0.07, wheelMultiplier: 0.85, touchMultiplier: 1.2, smoothWheel: true });
     if (hasGsap) {
       lenis.on('scroll', ScrollTrigger.update);
       gsap.ticker.add(t => lenis.raf(t * 1000));

@@ -44,9 +44,9 @@ ul, ol { list-style: none; }
 .mono { font-family: var(--f-mono); font-size: 13px; }
 
 .grain {
-  position: fixed; inset: -50%; z-index: 90; pointer-events: none; opacity: .05;
+  position: fixed; inset: 0; z-index: 90; pointer-events: none; opacity: .05;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  animation: grain 1s steps(4) infinite;
+  /* static: animating a layer this size repaints the whole screen several times a second */
 }
 @keyframes grain { 0%{transform:translate(0,0)} 25%{transform:translate(-3%,2%)} 50%{transform:translate(2%,-3%)} 75%{transform:translate(-2%,-1%)} }
 
@@ -227,7 +227,7 @@ ul, ol { list-style: none; }
 .viz { position: relative; flex: 1; min-height: 340px; border-radius: calc(var(--r) - 8px); overflow: hidden; background: #0c0c0c; border: 1px solid var(--line); }
 .viz canvas { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: manipulation; }
 .viz-hud { position: absolute; left: 12px; top: 12px; display: flex; gap: 8px; flex-wrap: wrap; pointer-events: none; }
-.viz-hud div { background: rgba(10,10,10,.78); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px; }
+.viz-hud div { background: rgba(10,10,10,.88); border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px; }
 .viz-hud span { display: block; font-size: 11.5px; color: var(--ink-3); }
 .viz-hud b { font-family: var(--f-display); font-size: 20px; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
 .viz-villages { position: absolute; right: 12px; bottom: 12px; display: grid; gap: 4px; pointer-events: none; min-width: 168px; }
@@ -368,7 +368,7 @@ ul, ol { list-style: none; }
 .mcard-body { padding: 16px 18px 18px; display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
 .mcard-body h4 { font-family: var(--f-display); font-size: 21px; letter-spacing: -.02em; font-weight: 700; }
 .mcard-body .price { font-size: 14px; color: var(--honey); white-space: nowrap; }
-.pill { font-size: 12px; padding: 5px 10px; border-radius: 99px; background: rgba(10,10,10,.75); color: var(--honey); backdrop-filter: blur(6px); }
+.pill { font-size: 12px; padding: 5px 10px; border-radius: 99px; background: rgba(10,10,10,.75); color: var(--honey); }
 
 /* ============ society ============ */
 .society { position: relative; overflow: hidden; }
@@ -384,7 +384,7 @@ ul, ol { list-style: none; }
 .pillars li { display: grid; gap: 2px; padding: 14px 0; border-top: 1px solid var(--line-2); }
 .pillars li span { color: var(--ink-2); font-size: 15px; }
 .join { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
-.join .btn { backdrop-filter: blur(8px); }
+.join .btn { background: rgba(10,10,10,.35); }
 @media (max-width: 860px) { .society-grid { grid-template-columns: 1fr; } }
 @media (max-width: 520px) { .join .btn { flex: 1 1 100%; } }
 

@@ -13,7 +13,8 @@
   }
   function fitCanvas(c) {
     const r = c.getBoundingClientRect(), dpr = Math.min(window.devicePixelRatio || 1, 2);
-    c.width = Math.max(1, Math.round(r.width * dpr)); c.height = Math.max(1, Math.round(r.height * dpr));
+    const w = Math.max(1, Math.round(r.width * dpr)), h = Math.max(1, Math.round(r.height * dpr));
+    if (c.width !== w || c.height !== h) { c.width = w; c.height = h; } // resizing clears and reallocates, so only when needed
     return dpr;
   }
   // tiny deterministic noise

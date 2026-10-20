@@ -7,7 +7,7 @@
 .vf-top { position: absolute; top: 16px; left: 18px; right: 18px; display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-3); pointer-events: none; font-variant-numeric: tabular-nums; }
 .vf-top [data-vf-count] { color: var(--ink); font-weight: 600; }
 .vf-bar { position: absolute; left: 14px; right: 14px; bottom: 40px; display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; }
-.vf-arrow { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: rgba(10,10,10,.6); border: 1px solid var(--line-2); color: var(--ink); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: background .25s, color .25s, transform .25s; }
+.vf-arrow { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: rgba(10,10,10,.72); border: 1px solid var(--line-2); color: var(--ink); transition: background .25s, color .25s, transform .25s; }
 .vf-arrow:hover { background: var(--vf); color: #000; border-color: var(--vf); }
 .vf-arrow:active { transform: scale(.92); }
 .vf-info { text-align: center; display: grid; gap: 2px; pointer-events: none; text-shadow: 0 2px 12px rgba(0,0,0,.6); }

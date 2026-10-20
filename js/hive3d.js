@@ -12,8 +12,10 @@ function hive() {
   if (!canvas) return;
   const mobile = window.innerWidth < 760;
 
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, mobile ? 1.5 : 2));
+  // antialiasing only where pixels are big; high-DPI screens look sharp without it
+  const dprMax = mobile ? 1.25 : 1.5;
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: window.devicePixelRatio < 1.5, alpha: false, powerPreference: 'high-performance' });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, dprMax));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.05;
@@ -46,10 +48,37 @@ function hive() {
       cells.push({ x, z, d, seed: Math.random(), lit: Math.random() < 0.05 });
     }
   }
+  // Cell motion runs on the GPU: positions are written once, the vertex shader lifts each cell
+  // every frame from a few uniforms (time, pointer, click waves). No per-frame CPU loop.
+  const seeds = new Float32Array(cells.length), lits = new Float32Array(cells.length);
+  cells.forEach((c, i) => { seeds[i] = c.seed; lits[i] = c.lit ? 1 : 0; });
+  geo.setAttribute('aSeed', new THREE.InstancedBufferAttribute(seeds, 1));
+  geo.setAttribute('aLit', new THREE.InstancedBufferAttribute(lits, 1));
+  const U = { uTime: { value: 0 }, uHit: { value: new THREE.Vector2() }, uWaves: { value: [0, 1, 2, 3].map(() => new THREE.Vector3(0, 0, 99)) } };
+  mat.onBeforeCompile = sh => {
+    Object.assign(sh.uniforms, U);
+    sh.vertexShader = 'attribute float aSeed;\nattribute float aLit;\nuniform float uTime;\nuniform vec2 uHit;\nuniform vec3 uWaves[4];\n' +
+      sh.vertexShader.replace('#include <begin_vertex>', `#include <begin_vertex>
+        vec2 ip = vec2(instanceMatrix[3][0], instanceMatrix[3][2]);
+        float dd = length(ip);
+        float lift = sin(dd * .45 - uTime * 1.1) * .35 + sin(ip.x * .3 + uTime * .6) * .15;
+        float k = max(0., 1. - distance(ip, uHit) / 4.5); lift += k * k * 1.6;
+        for (int i = 0; i < 4; i++) {
+          vec3 w = uWaves[i];
+          if (w.z < 4.) { float wd = distance(ip, w.xy) - w.z * 9.; lift += exp(-wd * wd * .6) * 1.4 * (1. - w.z / 4.); }
+        }
+        lift += aLit * (.25 + sin(uTime * 2. + aSeed * 6.) * .15);
+        transformed.y += lift / length(instanceMatrix[1].xyz);`);
+  };
   const mesh = new THREE.InstancedMesh(geo, mat, cells.length);
-  mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+  mesh.frustumCulled = false; // cells move in the shader, so the CPU bounds are not exact
   const dark = new THREE.Color('#141417');
   cells.forEach((c, i) => mesh.setColorAt(i, c.lit ? HONEY : dark));
+  {
+    const m = new THREE.Matrix4(), q0 = new THREE.Quaternion(), v = new THREE.Vector3(), s = new THREE.Vector3();
+    cells.forEach((c, i) => mesh.setMatrixAt(i, m.compose(v.set(c.x, 0, c.z), q0, s.set(1, 1 + c.d * 0.02, 1))));
+    mesh.instanceMatrix.needsUpdate = true;
+  }
   scene.add(mesh);
 
   /* ---- lights ---- */
@@ -79,7 +108,7 @@ function hive() {
     beeSlot.scale.setScalar(size);
     beeSlot.position.set(0, halfH * (camera.aspect < 1 ? 0.42 : 0.4), -BEE_DIST);
   }
-  new SVGLoader().load('images/brand/bee-mark.svg', data => {
+  fetch('images/brand/bee-mark.svg').then(r => r.text()).then(txt => new SVGLoader().parse(txt.replace(/currentColor/g, '#000'))).then(data => {
     const goldMat = new THREE.MeshStandardMaterial({ color: '#ffb800', metalness: 0.9, roughness: 0.32, emissive: '#ff8a00', emissiveIntensity: 0.22, envMapIntensity: 0.55 });
     const g = new THREE.Group();
     data.paths.forEach(p => {
@@ -172,22 +201,9 @@ function hive() {
     waves.forEach(w => { w.t += dt; });
     while (waves.length && waves[0].t > 4) waves.shift();
 
-    for (let i = 0; i < cells.length; i++) {
-      const c = cells[i];
-      let y = Math.sin(c.d * 0.45 - t * 1.1) * 0.35 + Math.sin(c.x * 0.3 + t * 0.6) * 0.15;
-      const md = Math.hypot(c.x - hit.x, c.z - hit.z);
-      y += Math.max(0, 1 - md / 4.5) ** 2 * 1.6;
-      for (const w of waves) {
-        const wd = Math.hypot(c.x - w.x, c.z - w.z) - w.t * 9;
-        y += Math.exp(-wd * wd * 0.6) * 1.4 * (1 - w.t / 4);
-      }
-      if (c.lit) y += 0.25 + Math.sin(t * 2 + c.seed * 6) * 0.15;
-      p.set(c.x, y, c.z);
-      sc.set(1, 1 + c.d * 0.02, 1);
-      m4.compose(p, q, sc);
-      mesh.setMatrixAt(i, m4);
-    }
-    mesh.instanceMatrix.needsUpdate = true;
+    U.uTime.value = t;
+    U.uHit.value.set(hit.x, hit.z);
+    for (let i = 0; i < 4; i++) { const w = waves[i]; U.uWaves.value[i].set(w ? w.x : 0, w ? w.z : 0, w ? w.t : 99); }
 
     if (bee.userData.ready) {
       bee.position.y = Math.sin(t * 1.2) * 0.04;
