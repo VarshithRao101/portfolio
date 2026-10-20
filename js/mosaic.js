@@ -13,42 +13,42 @@
 
   const COLS = {
     x3: [
-      P('images/mosaic/hoodie-concrete.jpg'),
+      P('images/mosaic/hoodie-concrete.webp'),
       T('gold', { tag: 'BEE SOCIETY', sub: 'Open builds & hacks' }),
       P('images/merch/olive-lookbook.webp'),
       T('dark', { num: '8.3', tag: 'CGPA', sub: 'Built alongside college' }),
-      P('images/mosaic/arch-honeycomb.jpg')
+      P('images/mosaic/arch-honeycomb.webp')
     ],
     x2: [
       T('dark', { bee: 1, tag: 'Studio Lab', sub: 'Est. 2024' }),
-      P('images/mosaic/gold-fluid.jpg'),
+      P('images/mosaic/gold-fluid.webp'),
       T('honey', { num: '01', tag: 'Drop', sub: 'Limited production' }),
-      P('images/mosaic/hardware-device.jpg'),
+      P('images/mosaic/hardware-device.webp'),
       T('grey', { tag: 'Patents', sub: 'Hydrology hazard rating' })
     ],
     x1: [
-      P('images/mosaic/topo-contour.jpg'),
+      P('images/mosaic/topo-contour.webp'),
       T('grey', { tag: 'Research', sub: 'Early warning systems' }),
-      P('images/mosaic/arch-honeycomb.jpg'),
+      P('images/mosaic/arch-honeycomb.webp'),
       T('gold', { bee: 1 }),
-      P('images/mosaic/hoodie-concrete.jpg')
+      P('images/mosaic/hoodie-concrete.webp')
     ],
     c1: [
-      P('images/mosaic/arch-honeycomb.jpg'),
+      P('images/mosaic/arch-honeycomb.webp'),
       T('grey', { num: '12+', tag: 'Products', sub: 'built & shipped' }),
-      P('images/mosaic/hoodie-concrete.jpg'),
+      P('images/mosaic/hoodie-concrete.webp'),
       T('dark', { bee: 1, tag: 'TRNT BEE', sub: 'Research & Design' }),
       P('images/merch/olive-lookbook.webp')
     ],
     c2: [
       T('honey', { tag: 'Collection 01', sub: 'Heavyweight Techwear' }),
-      P('images/mosaic/hardware-device.jpg'),
+      P('images/mosaic/hardware-device.webp'),
       T('gold', { bee: 1 }),
-      P('images/mosaic/topo-contour.jpg'),
+      P('images/mosaic/topo-contour.webp'),
       T('grey', { num: '5,749', tag: 'Dams Mapped', sub: 'Patent-pending AI' })
     ],
     c3: [
-      P('images/mosaic/gold-fluid.jpg'),
+      P('images/mosaic/gold-fluid.webp'),
       T('dark', { num: '04', tag: 'Divisions', sub: 'One studio ecosystem' }),
       P('images/founder.webp'),
       T('honey', { tag: 'BEE SOCIETY', sub: 'Student builder collective' }),

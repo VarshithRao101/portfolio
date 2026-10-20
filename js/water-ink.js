@@ -187,7 +187,7 @@
 
   /* ---------- input ---------- */
   const queue = [];          // splats waiting for the next frame: [x, y, dx, dy, ink] in CSS px
-  let last = null, lastInput = 0, running = false;
+  let last = null, lastInput = 0, running = false, enabled = false;
 
   function addSample(x, y) {
     if (!last) { last = { x, y }; return; }
@@ -202,6 +202,7 @@
     last = { x, y };
   }
   window.addEventListener('pointermove', e => {
+    if (!enabled) return;
     if (e.pointerType && e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
     const evs = e.getCoalescedEvents ? e.getCoalescedEvents() : null;
     if (evs && evs.length) evs.forEach(c => addSample(c.clientX, c.clientY)); else addSample(e.clientX, e.clientY);
@@ -214,7 +215,7 @@
   let lastScroll = window.scrollY;
   window.addEventListener('scroll', () => {
     const dy = window.scrollY - lastScroll; lastScroll = window.scrollY;
-    if (!last || Math.abs(dy) < 1) return;
+    if (!enabled || !last || Math.abs(dy) < 1) return;
     queue.push([last.x, last.y, 0, -Math.max(-60, Math.min(60, dy)) * 1.4, 0, 3.5]);
     wake();
   }, { passive: true });
@@ -315,6 +316,7 @@
     if (!running && !document.hidden) { running = true; prev = performance.now(); requestAnimationFrame(frame); }
   }
   function frame(now) {
+    if (!enabled) { running = false; return; }
     const dt = Math.min((now - prev) / 1000, 1 / 30); prev = now;
     while (queue.length) { const q = queue.shift(); splat(q[0], q[1], q[2], q[3], q[4], q[5] || 1); }
     step(dt);
@@ -327,4 +329,14 @@
     requestAnimationFrame(frame);
   }
   document.addEventListener('visibilitychange', () => { if (document.hidden) running = false; });
+
+  // switched by the Trail button in the header (js/header.js)
+  window.TBInk = {
+    enable() { enabled = true; canvas.style.display = ''; },
+    disable() {
+      enabled = false; last = null; queue.length = 0; running = false;
+      gl.bindFramebuffer(gl.FRAMEBUFFER, null); gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
+      canvas.style.display = 'none';
+    }
+  };
 })();
